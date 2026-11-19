@@ -433,7 +433,7 @@ function SectionView({ topicId, section: s, index, stretch, read, open, next, on
   const examples = s.workedExamples ?? [];
 
   return (
-    <section id={`sec-${s.id}`} aria-labelledby={`h-${s.id}`} className="card scroll-mt-32 p-4 sm:p-6">
+    <section id={`sec-${s.id}`} aria-labelledby={`h-${s.id}`} className="card min-w-0 overflow-x-auto scroll-mt-32 p-4 sm:p-6">
       <header className="flex items-start gap-3">
         <span
           className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-black ${read ? "bg-good-soft text-good" : "bg-brand-soft text-brand"}`}
@@ -748,7 +748,7 @@ export function GuideView({ topic, extras, onPractise }: { topic: Topic; extras:
               </h2>
               <ul className="mt-3 grid gap-3 sm:grid-cols-2">
                 {didYouKnow.map((f, i) => (
-                  <li key={i} className="card p-4 text-[0.95rem]">
+                  <li key={i} className="card min-w-0 overflow-x-auto p-4 text-[0.95rem]">
                     <Rich text={f} />
                   </li>
                 ))}
@@ -763,7 +763,7 @@ export function GuideView({ topic, extras, onPractise }: { topic: Topic; extras:
               </h2>
               <div className="mt-3 grid gap-4 xl:grid-cols-2">
                 {activities.map((a, i) => (
-                  <article key={i} className="card p-4 sm:p-5">
+                  <article key={i} className="card min-w-0 overflow-x-auto p-4 sm:p-5">
                     <div className="flex items-center gap-3">
                       <span className="text-3xl" aria-hidden>
                         {a.emoji}
@@ -794,7 +794,7 @@ export function GuideView({ topic, extras, onPractise }: { topic: Topic; extras:
                       </ol>
                     ) : null}
                     {a.maths ? (
-                      <div className="mt-4 rounded-xl bg-brand-soft p-3 text-sm">
+                      <div className="mt-4 overflow-x-auto rounded-xl bg-brand-soft p-3 text-sm">
                         <div className="font-extrabold text-brand">The maths</div>
                         <Rich text={a.maths} className="mt-1" />
                       </div>
@@ -812,7 +812,7 @@ export function GuideView({ topic, extras, onPractise }: { topic: Topic; extras:
               </h2>
               <div className="mt-3 grid gap-4 xl:grid-cols-2">
                 {bonus.map((d, i) => (
-                  <div key={i} className="card p-4">
+                  <div key={i} className="card min-w-0 overflow-x-auto p-4">
                     <h3 className="font-extrabold">
                       <RichInline text={d.title} />
                     </h3>
@@ -824,7 +824,7 @@ export function GuideView({ topic, extras, onPractise }: { topic: Topic; extras:
           ) : null}
 
           {extras.history ? (
-            <section aria-labelledby="gv-history" className="card p-4 sm:p-6">
+            <section aria-labelledby="gv-history" className="card min-w-0 overflow-x-auto p-4 sm:p-6">
               <div className="text-xs font-black uppercase tracking-wider text-ink-2">📜 From the history of maths</div>
               <h2 id="gv-history" className="mt-1 text-lg font-extrabold">
                 <RichInline text={extras.history.title} />
