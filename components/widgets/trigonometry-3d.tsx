@@ -19,9 +19,9 @@ function AmbiguousAndCosineLab() {
 
   if (mode === "ssa") {
     const h = sidePQ * Math.sin(angleP * DEG);
-    const px = 48;
+    const px = 38;
     const py = 178;
-    const scale = 14;
+    const scale = 12;
     const qx = px + sidePQ * Math.cos(angleP * DEG) * scale;
     const qy = py - sidePQ * Math.sin(angleP * DEG) * scale;
     const rArc = sideQR * scale;
@@ -111,7 +111,7 @@ function AmbiguousAndCosineLab() {
             h = {h.toFixed(1)}
           </text>
           {/* Fixed arm PQ */}
-          <line x1={px} y1={py} x2={qx} y2={qy} stroke="#0f172a" strokeWidth={2.6} />
+          <line x1={px} y1={py} x2={qx} y2={qy} className="stroke-ink" strokeWidth={2.6} />
           {/* Compass arc centered at Q */}
           <circle cx={qx} cy={qy} r={rArc} fill="none" stroke="#cbd5e1" strokeWidth={1.5} strokeDasharray="5,4" />
 
@@ -138,8 +138,8 @@ function AmbiguousAndCosineLab() {
             </g>
           ) : null}
 
-          <circle cx={px} cy={py} r={4} fill="#0f172a" />
-          <circle cx={qx} cy={qy} r={4} fill="#0f172a" />
+          <circle cx={px} cy={py} r={4} className="fill-ink" />
+          <circle cx={qx} cy={qy} r={4} className="fill-ink" />
           <text x={px - 10} y={py + 15} fontSize={12} fontWeight={800} className="fill-ink">
             P ({angleP}°)
           </text>
@@ -314,7 +314,7 @@ function ThreeDShadowExplorer() {
           <text x={378} y={178} fontSize={11} fontWeight={700} textAnchor="middle" fill="#b45309">
             AC = {floorDiag.toFixed(1)} cm
           </text>
-          <text x={445} y={114} fontSize={11} fontWeight={700} textAnchor="end" fill="#2563eb">
+          <text x={437} y={114} fontSize={11} fontWeight={700} textAnchor="start" fill="#2563eb">
             {hgt}
           </text>
           <text x={352} y={156} fontSize={11} fontWeight={800} fill="#dc2626">

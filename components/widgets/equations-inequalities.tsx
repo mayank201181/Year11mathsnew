@@ -134,7 +134,7 @@ function QuadraticInequalityExplorer() {
               <circle key={n} cx={plane.px(n)} cy={plane.py(0)} r={3.5} fill="#10b981" />
             ))}
             {/* Parabola curve */}
-            <path d={samples.join(" ")} fill="none" stroke="#0f172a" strokeWidth={2.5} clipPath="url(#qi-clip)" />
+            <path d={samples.join(" ")} fill="none" className="stroke-ink" strokeWidth={2.5} clipPath="url(#qi-clip)" />
             {/* Critical value markers */}
             {[lo, hi].map((r) => (
               <circle
@@ -298,7 +298,7 @@ function LineCircleIntersectionLab() {
                   fontSize={10.5}
                   fontWeight="bold"
                   textAnchor={pt[0] >= 0 ? "start" : "end"}
-                  fill="#0f172a"
+                  className="fill-ink"
                 >
                   {fmtCoord(pt)}
                 </text>

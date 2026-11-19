@@ -94,7 +94,7 @@ export default function FormulasPage() {
                 {g.topics.map((t) => (
                   <article
                     key={t.id}
-                    className={`card break-inside-avoid border-l-4 p-4 sm:p-5 print:rounded-lg print:p-2.5 print:text-[10pt] print:shadow-none ${st.border}`}
+                    className={`card min-w-0 overflow-hidden break-inside-avoid border-l-4 p-4 sm:p-5 print:rounded-lg print:p-2.5 print:text-[10pt] print:shadow-none ${st.border}`}
                     aria-labelledby={`f-${t.id}`}
                   >
                     <div className="flex flex-wrap items-start justify-between gap-2">
@@ -117,11 +117,11 @@ export default function FormulasPage() {
                         <div className="text-xs font-black uppercase tracking-wider text-ink-2">📐 Key Formulas &amp; Facts</div>
                         <dl className="mt-2 grid gap-2.5 sm:grid-cols-2">
                           {formulasOf(t).map((f, i) => (
-                            <div key={`${t.id}-f-${i}`} className="rounded-xl border border-line bg-surface-2/60 p-3">
+                            <div key={`${t.id}-f-${i}`} className="min-w-0 overflow-x-auto rounded-xl border border-line bg-surface-2/60 p-3">
                               <dt className="text-xs font-extrabold uppercase tracking-wide text-ink-2 print:text-[8pt]">
                                 <RichInline text={f.name} />
                               </dt>
-                              <dd className="mt-0.5">
+                              <dd className="mt-0.5 min-w-0">
                                 <Rich text={f.formula} className="text-[1.02rem] font-semibold text-ink print:text-[10pt]" />
                                 {f.note ? <Rich text={f.note} className="mt-0.5 text-xs text-ink-2 print:text-[8pt]" /> : null}
                               </dd>
@@ -137,11 +137,11 @@ export default function FormulasPage() {
                         <ul className="mt-2 space-y-2">
                           {trapsOf(t).slice(0, 4).map((m, i) => (
                             <li key={`${t.id}-t-${i}`} className="grid overflow-hidden rounded-xl border border-line text-sm sm:grid-cols-2">
-                              <div className="bg-bad-soft/80 px-3 py-2">
+                              <div className="min-w-0 overflow-x-auto bg-bad-soft/80 px-3 py-2">
                                 <span className="font-black text-bad">❌ </span>
                                 <RichInline text={m.wrong} />
                               </div>
-                              <div className="bg-good-soft/80 px-3 py-2 font-semibold">
+                              <div className="min-w-0 overflow-x-auto bg-good-soft/80 px-3 py-2 font-semibold">
                                 <span className="font-black text-good">✅ </span>
                                 <RichInline text={m.right} />
                               </div>

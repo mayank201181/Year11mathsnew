@@ -378,13 +378,13 @@ export function LearnSmart({ topic }: { topic: Topic }) {
           <ul className="space-y-3">
             {myths.map((m, i) => (
               <li key={i} className="card grid overflow-hidden sm:grid-cols-2">
-                <div className="bg-bad-soft p-4">
+                <div className="min-w-0 overflow-x-auto bg-bad-soft p-4">
                   <div className="text-xs font-black uppercase tracking-wider text-bad">❌ Never Write This (Loses Marks)</div>
                   <p className="mt-1 font-medium text-ink">
                     <RichInline text={m.wrong} />
                   </p>
                 </div>
-                <div className="bg-good-soft p-4">
+                <div className="min-w-0 overflow-x-auto bg-good-soft p-4">
                   <div className="text-xs font-black uppercase tracking-wider text-good">✅ Write This Instead (Earns Full Marks)</div>
                   <p className="mt-1 font-semibold text-ink">
                     <RichInline text={m.right} />
@@ -417,7 +417,7 @@ export function LearnSmart({ topic }: { topic: Topic }) {
         <Block id="rv-formulas" icon="📐" title="IGCSE 4MA1 Formulas & Rules" intro="Check the note on each card to see whether Edexcel prints it on the Paper 1H/2H formula sheet or expects you to memorise it.">
           <ul className="grid gap-3 sm:grid-cols-2">
             {formulas.map((f, i) => (
-              <li key={i} className="card p-4">
+              <li key={i} className="card min-w-0 overflow-x-auto p-4">
                 <div className="text-sm font-bold text-ink-2">
                   <RichInline text={f.name} />
                 </div>
@@ -445,7 +445,7 @@ export function LearnSmart({ topic }: { topic: Topic }) {
         <Block id="rv-tricks" icon="🧩" title="Memory Hooks & Exam Shortcuts">
           <ul className="grid gap-3 sm:grid-cols-2">
             {mnemonics.map((m, i) => (
-              <li key={i} className="card p-4">
+              <li key={i} className="card min-w-0 overflow-x-auto p-4">
                 <div className="text-xs font-black uppercase tracking-wider text-brand">
                   <RichInline text={m.topic} />
                 </div>

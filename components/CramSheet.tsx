@@ -302,9 +302,14 @@ export function CramSheet({
       )}
 
       {/* Per-Topic Cram Cards */}
+      {visiblePacks.length === 0 ? (
+        <div className="card p-8 text-center text-ink-2">
+          No cram notes matched &ldquo;{query}&rdquo; in your selected topics.
+        </div>
+      ) : (
       <div className="space-y-8">
         {visiblePacks.map((pack) => (
-          <article key={pack.id} className="card space-y-6 overflow-hidden p-5 sm:p-6">
+          <article key={pack.id} className="card min-w-0 space-y-6 overflow-hidden p-5 sm:p-6">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line pb-4">
               <div className="flex items-center gap-3">
                 <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-soft text-2xl" aria-hidden>
@@ -343,7 +348,7 @@ export function CramSheet({
                 {pack.examMistakes.length > 0 ? (
                   <ul className="grid gap-2.5 sm:grid-cols-2">
                     {pack.examMistakes.map((m, i) => (
-                      <li key={i} className="flex items-start gap-2.5 rounded-xl border border-bad/25 bg-bad-soft p-3 text-sm">
+                      <li key={i} className="flex min-w-0 items-start gap-2.5 overflow-x-auto rounded-xl border border-bad/25 bg-bad-soft p-3 text-sm">
                         <span className="mt-0.5 shrink-0 font-black text-bad" aria-hidden>✗</span>
                         <span className="min-w-0 flex-1">
                           <RichInline text={m} />
@@ -360,7 +365,7 @@ export function CramSheet({
                     </div>
                     <div className="grid gap-2.5 sm:grid-cols-2">
                       {pack.questionTraps.map((qt, i) => (
-                        <div key={i} className="rounded-xl border border-line bg-surface-2/70 p-3 text-xs">
+                        <div key={i} className="min-w-0 overflow-x-auto rounded-xl border border-line bg-surface-2/70 p-3 text-xs">
                           <div className="font-bold text-ink-2">
                             When asked: <RichInline text={qt.question} />
                           </div>
@@ -414,13 +419,13 @@ export function CramSheet({
                 <div className="space-y-2.5">
                   {pack.misconceptions.map((m, i) => (
                     <div key={i} className="grid overflow-hidden rounded-xl border border-line sm:grid-cols-2">
-                      <div className="bg-bad-soft p-3 text-sm">
+                      <div className="min-w-0 overflow-x-auto bg-bad-soft p-3 text-sm">
                         <div className="text-[11px] font-black uppercase tracking-wider text-bad">✗ Loses the mark</div>
                         <p className="mt-0.5">
                           <RichInline text={m.wrong} />
                         </p>
                       </div>
-                      <div className="bg-good-soft p-3 text-sm">
+                      <div className="min-w-0 overflow-x-auto bg-good-soft p-3 text-sm">
                         <div className="text-[11px] font-black uppercase tracking-wider text-good">✓ Earns the mark</div>
                         <p className="mt-0.5 font-semibold">
                           <RichInline text={m.right} />
@@ -440,7 +445,7 @@ export function CramSheet({
                 </h3>
                 <div className="grid gap-2.5 sm:grid-cols-2">
                   {pack.mnemonics.map((m, i) => (
-                    <div key={i} className="rounded-xl border border-line bg-accent-soft/40 p-3.5 text-sm">
+                    <div key={i} className="min-w-0 overflow-x-auto rounded-xl border border-line bg-accent-soft/40 p-3.5 text-sm">
                       <div className="text-xs font-bold text-ink-2">
                         <RichInline text={m.topic} />
                       </div>
@@ -464,7 +469,7 @@ export function CramSheet({
                 </h3>
                 <div className="grid gap-2.5 sm:grid-cols-2">
                   {pack.keyFacts.map((f, i) => (
-                    <div key={i} className="rounded-xl border border-line bg-surface p-3 text-sm">
+                    <div key={i} className="min-w-0 overflow-x-auto rounded-xl border border-line bg-surface p-3 text-sm">
                       <div className="text-xs font-extrabold text-brand">
                         <RichInline text={f.name} />
                       </div>
@@ -482,6 +487,7 @@ export function CramSheet({
           </article>
         ))}
       </div>
+      )}
     </div>
   );
 }

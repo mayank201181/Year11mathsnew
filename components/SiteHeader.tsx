@@ -162,13 +162,18 @@ export function MobileNav() {
 
   return (
     <nav className="no-print fixed inset-x-0 bottom-0 z-30 border-t border-line bg-surface/95 pb-[env(safe-area-inset-bottom)] backdrop-blur" aria-label="Bottom dock">
-      <div className="mx-auto grid max-w-4xl grid-cols-8 px-1">
+      <div className="mx-auto grid max-w-4xl grid-cols-8 px-0.5 sm:px-1">
         {NAV.map((n) => (
-          <Link key={n.href} href={n.href} className={`flex flex-col items-center gap-0.5 py-2 text-[0.65rem] font-bold sm:text-xs ${active(path, n.href) ? "text-brand" : "text-ink-2"}`} aria-current={active(path, n.href) ? "page" : undefined}>
-            <span className="text-lg sm:text-xl" aria-hidden>
+          <Link
+            key={n.href}
+            href={n.href}
+            className={`flex min-w-0 flex-col items-center justify-center gap-0.5 py-2 text-[10px] leading-tight font-bold whitespace-nowrap sm:text-xs ${active(path, n.href) ? "text-brand" : "text-ink-2"}`}
+            aria-current={active(path, n.href) ? "page" : undefined}
+          >
+            <span className="text-lg leading-none sm:text-xl" aria-hidden>
               {n.icon}
             </span>
-            {n.label}
+            <span>{n.label}</span>
           </Link>
         ))}
       </div>

@@ -164,7 +164,7 @@ function GraphTransformationLab() {
             min={-3}
             max={3}
             step={0.5}
-            onChange={(v) => setA(v === 0 ? 0.5 : v)}
+            onChange={(v) => setA(v === 0 ? (a > 0 ? -0.5 : 0.5) : v)}
             format={fmtNum}
           />
           <Slider
@@ -173,7 +173,7 @@ function GraphTransformationLab() {
             min={-3}
             max={3}
             step={0.5}
-            onChange={(v) => setB(v === 0 ? 0.5 : v)}
+            onChange={(v) => setB(v === 0 ? (b > 0 ? -0.5 : 0.5) : v)}
             format={fmtNum}
           />
           <Slider
@@ -313,15 +313,15 @@ function GaussSeriesExplorer() {
             return (
               <g key={i}>
                 <rect x={x} y={baseLine - h1} width={barW} height={h1} rx={4} fill="#6366f1" />
-                {barW >= 22 ? (
-                  <text x={x + barW / 2} y={baseLine - Math.min(h1 / 2 - 4, h1 - 6)} fontSize={10} fontWeight={700} fill="#ffffff" textAnchor="middle">
+                {barW >= 22 && h1 >= 14 ? (
+                  <text x={x + barW / 2} y={baseLine - h1 / 2 + 4} fontSize={10} fontWeight={700} fill="#ffffff" textAnchor="middle">
                     {u}
                   </text>
                 ) : null}
                 {mode === "paired" ? (
                   <>
                     <rect x={x} y={baseLine - h1 - h2 - 2} width={barW} height={h2} rx={4} fill="#f59e0b" opacity={0.88} />
-                    {barW >= 22 ? (
+                    {barW >= 22 && h2 >= 14 ? (
                       <text
                         x={x + barW / 2}
                         y={baseLine - h1 - h2 / 2 + 2}

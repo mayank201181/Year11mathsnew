@@ -322,9 +322,9 @@ function FrustumSimilaritySlicer() {
   const k3Pct = +(k * k * k * 100).toFixed(1);
   const frustPct = +(100 - k3Pct).toFixed(1);
 
-  const apexX = 190;
+  const apexX = 215;
   const apexY = 20;
-  const baseHalfW = bigR * 11;
+  const baseHalfW = bigR * 8.5;
   const totalPixH = 142;
   const cutY = apexY + totalPixH * k;
   const cutHalfW = baseHalfW * k;
@@ -348,7 +348,7 @@ function FrustumSimilaritySlicer() {
     >
       <div className="space-y-4">
         <svg
-          viewBox="0 0 380 185"
+          viewBox="0 0 460 190"
           className="w-full rounded-xl border border-line bg-surface"
           role="img"
           aria-label="Cone sliced horizontally into a small top similar cone and a bottom frustum"
@@ -368,15 +368,15 @@ function FrustumSimilaritySlicer() {
           />
           <ellipse cx={apexX} cy={cutY} rx={cutHalfW} ry={Math.max(4, cutHalfW * 0.16)} fill="#fecaca" stroke="#dc2626" strokeWidth={1.5} />
           <ellipse cx={apexX} cy={baseY} rx={baseHalfW} ry={Math.max(6, baseHalfW * 0.16)} fill="#bfdbfe" stroke="#1d4ed8" strokeWidth={1.8} />
-          <line x1={apexX} y1={apexY} x2={apexX} y2={baseY} stroke="#0f172a" strokeWidth={1.3} strokeDasharray="3,3" />
-          <text x={apexX + cutHalfW + 8} y={cutY + 4} fontSize={11} fontWeight="bold" fill="#dc2626">
+          <line x1={apexX} y1={apexY} x2={apexX} y2={baseY} className="stroke-ink" strokeWidth={1.3} strokeDasharray="3,3" />
+          <text x={Math.min(340, apexX + cutHalfW + 8)} y={cutY + 4} fontSize={11} fontWeight="bold" fill="#dc2626">
             r = {smallR} cm (h = {smallH})
           </text>
-          <text x={apexX + baseHalfW + 8} y={baseY + 2} fontSize={11} fontWeight="bold" fill="#1d4ed8">
+          <text x={apexX + baseHalfW + 8} y={baseY + 4} fontSize={11} fontWeight="bold" fill="#1d4ed8">
             R = {bigR} cm
           </text>
-          <text x={20} y={(cutY + baseY) / 2} fontSize={11} fontWeight="bold" fill="#1e3a8a">
-            Frustum height = {frustH} cm
+          <text x={14} y={Math.min(baseY - 4, (cutY + baseY) / 2 + 4)} fontSize={11} fontWeight="bold" fill="#2563eb">
+            Frustum h = {frustH} cm
           </text>
         </svg>
 

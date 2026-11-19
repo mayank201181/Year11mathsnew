@@ -287,7 +287,14 @@ function AlgebraicFractionCanceller() {
 
   const origZero = orig.bot === 0;
   const origVal = origZero ? null : orig.top / orig.bot;
-  const testVal = mode === "legal" ? (simp.bot === 0 ? null : simp.top / simp.bot) : bad.top / bad.bot;
+  const testVal =
+    mode === "legal"
+      ? simp.bot === 0
+        ? null
+        : simp.top / simp.bot
+      : bad.bot === 0
+        ? null
+        : bad.top / bad.bot;
 
   const fmtVal = (v: number | null) =>
     v === null ? "Excluded (÷ 0)" : Number.isInteger(v) ? String(v) : v.toFixed(2).replace(/^-/, "−");

@@ -12,6 +12,8 @@ import type { Drill } from "../lib/drills/types.ts";
 import { makeRng } from "../lib/drills/rng.ts";
 import { checkAnswer, displayAnswer, specSelfCheck } from "../lib/answerCheck.ts";
 import { SPRINT_MODES, sprintItem } from "../lib/sprint.ts";
+import { buildTopicCramPack } from "../lib/cram.ts";
+import { findMathClose, toMathML } from "../lib/mathml.ts";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const load = async <T>(rel: string, name: string): Promise<T | undefined> => {
@@ -91,7 +93,41 @@ test("sprint modes fuzz cleanly across 200 seeds and preserve tolerance", () => 
       if (item.tolerance !== undefined && spec.type === "number" && spec.tolerance !== item.tolerance) {
         problems.push(`${mode} s${seed}: tolerance lost`);
       }
+      if (item.prompt.includes("\\") || item.fact.includes("\\")) {
+        problems.push(`${mode} s${seed}: literal backslash in prompt/fact`);
+      }
     }
   }
   assert.deepEqual(problems, []);
+});
+
+test("cram packs have zero broken {{ }} spans and set notation renders cleanly", async () => {
+  for (const m of TOPIC_META) {
+    const guide = await load<TopicGuide>(`lib/topics/${m.id}/guide.ts`, "guide");
+    if (!guide) continue;
+    const practice = await load<TopicPractice>(`lib/topics/${m.id}/practice.ts`, "practice");
+    const topic: Topic = {
+      ...guide,
+      quiz: practice?.quiz ?? [],
+      mcqPapers: (await load<Paper[]>(`lib/topics/${m.id}/mcq.ts`, "mcqPapers")) ?? [],
+      practicePapers: [...(practice?.papers ?? []), ...((await load<Paper[]>(`lib/topics/${m.id}/practice2.ts`, "morePapers")) ?? [])],
+      challenge: practice?.challenge ?? [],
+    };
+    const pack = buildTopicCramPack(topic);
+    for (const qt of pack.questionTraps) {
+      let i = 0;
+      while ((i = qt.question.indexOf("{{", i)) >= 0) {
+        const end = findMathClose(qt.question, i);
+        assert.ok(end > i + 2, `unclosed {{ in cram trap for ${m.id}: ${qt.question}`);
+        i = end + 2;
+      }
+    }
+  }
+  // Set notation keeps visible { } while subscripts strip grouping { }.
+  const setStr = "{{A = {1, 2, 3}}}";
+  assert.equal(findMathClose(setStr, 0), setStr.length - 2);
+  const setMl = toMathML(setStr.slice(2, -2));
+  assert.ok(setMl.includes("<mo>{</mo>") && setMl.includes("<mo>}</mo>"), setMl);
+  const subMl = toMathML("S_{10}");
+  assert.ok(!subMl.includes("<mo>{</mo>") && subMl.includes("<mn>10</mn>"), subMl);
 });

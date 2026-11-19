@@ -192,8 +192,8 @@ class P {
       const inner = this.seq(true);
       const close = this.peek();
       if (close?.k === "rp") this.i++;
-      const open = t.v === "{" ? "" : t.v;
-      const shut = close?.k === "rp" ? (close.v === "}" ? "" : close.v) : "";
+      const open = t.v;
+      const shut = close?.k === "rp" ? close.v : "";
       return {
         ml: `<mrow>${open ? `<mo>${open}</mo>` : ""}${inner}${shut ? `<mo>${shut}</mo>` : ""}</mrow>`,
         inner: `<mrow>${inner}</mrow>`,
@@ -254,6 +254,42 @@ export function typedToMathML(normalized: string, algebra = true): string {
   let s = normalized.replace(/\bsqrt\s*\(/g, "sqrt(").replace(/\*/g, " * ");
   if (algebra) s = s.replace(/\/\s*(?!sqrt|cbrt)(\d+(?:\.\d+)?|\.\d+|pi|(?!pi)[a-z])(?=[a-z])/gi, "/$1 ");
   return toMathML(s);
+}
+
+/**
+ * Given a string `s` where `s.startsWith("{{", openIdx)`, find the index of the
+ * matching closing `}}`, respecting single `{...}` groups inside (e.g. set
+ * notation `{{A = {1, 2, 3}}}` or subscripts `{{S_{10}}}`). Returns -1 if unclosed.
+ */
+export function findMathClose(s: string, openIdx: number): number {
+  let i = openIdx + 2;
+  let braceDepth = 0;
+  let inQuote = false;
+  while (i < s.length) {
+    const ch = s[i];
+    if (ch === '"') {
+      inQuote = !inQuote;
+      i++;
+      continue;
+    }
+    if (!inQuote) {
+      if (ch === "{" && s[i + 1] !== "{") {
+        braceDepth++;
+        i++;
+        continue;
+      }
+      if (ch === "}") {
+        if (braceDepth > 0) {
+          braceDepth--;
+          i++;
+          continue;
+        }
+        if (s[i + 1] === "}") return i;
+      }
+    }
+    i++;
+  }
+  return -1;
 }
 
 /** Convert maths markup (the inside of {{ }}) to a MathML string. */

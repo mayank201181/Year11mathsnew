@@ -1,4 +1,72 @@
-import type { Question, Topic } from "@/lib/types";
+import type { Question, Topic } from "./types.ts";
+import { findMathClose } from "./mathml.ts";
+
+/**
+ * Truncate rich inline text (containing {{math}}, **bold**, `code`) without ever
+ * slicing through the middle of an inline span and leaking raw `{{` or `**` tokens.
+ */
+export function truncateRich(text: string, maxLen = 140): string {
+  const s = text.trim();
+  if (s.length <= maxLen) return s;
+
+  // Walk atomic spans so we never break inside {{...}}, **...**, or `...`.
+  const limit = maxLen - 1;
+  let i = 0;
+  let safeEnd = 0;
+  while (i < s.length && i <= limit) {
+    if (s.startsWith("{{", i)) {
+      const end = findMathClose(s, i);
+      if (end > i + 2) {
+        const spanEnd = end + 2;
+        if (spanEnd <= limit + 24) {
+          i = spanEnd;
+          safeEnd = i;
+          continue;
+        }
+        break;
+      }
+    }
+    if (s.startsWith("**", i)) {
+      let j = i + 2;
+      while (j < s.length) {
+        if (s.startsWith("{{", j)) {
+          const mEnd = findMathClose(s, j);
+          if (mEnd >= 0) {
+            j = mEnd + 2;
+            continue;
+          }
+        }
+        if (s.startsWith("**", j)) break;
+        j++;
+      }
+      if (j < s.length && s.startsWith("**", j)) {
+        const spanEnd = j + 2;
+        if (spanEnd <= limit + 16) {
+          i = spanEnd;
+          safeEnd = i;
+          continue;
+        }
+        break;
+      }
+    }
+    if (s[i] === "`") {
+      const end = s.indexOf("`", i + 1);
+      if (end > i) {
+        const spanEnd = end + 1;
+        if (spanEnd <= limit + 16) {
+          i = spanEnd;
+          safeEnd = i;
+          continue;
+        }
+        break;
+      }
+    }
+    if (/\s/.test(s[i])) safeEnd = i;
+    i++;
+  }
+  const cut = safeEnd > 40 ? safeEnd : i;
+  return `${s.slice(0, cut).replace(/[\s,;:–—-]+$/, "")}…`;
+}
 
 export interface QuestionTrapItem {
   question: string;
@@ -47,7 +115,7 @@ export function buildTopicCramPack(topic: Topic): TopicCramPack {
         seenErrors.add(norm);
         const firstLine = q.question.split("\n").find((ln) => ln.trim() && !ln.trim().startsWith("|")) ?? q.question;
         questionTraps.push({
-          question: firstLine.length > 140 ? `${firstLine.slice(0, 137)}…` : firstLine,
+          question: truncateRich(firstLine, 140),
           commonError: q.commonError.trim(),
         });
       }

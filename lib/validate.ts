@@ -5,7 +5,7 @@
 import type { AnswerSpec, Question, Topic, Trap, WorkedExample } from "./types.ts";
 import { checkAnswer, displayAnswer, specSelfCheck, specSample } from "./answerCheck.ts";
 import { suggestMarks } from "./writtenCheck.ts";
-import { toMathML } from "./mathml.ts";
+import { findMathClose, toMathML } from "./mathml.ts";
 
 export interface Issue {
   where: string;
@@ -24,8 +24,16 @@ export function checkText(where: string, s: unknown, issues: Issue[]) {
   const opens = (s.match(/\{\{/g) || []).length;
   const closes = (s.match(/\}\}/g) || []).length;
   if (opens !== closes) issues.push({ where, problem: `unbalanced {{ }} (${opens} vs ${closes})` });
-  for (const m of s.matchAll(/\{\{([\s\S]+?)\}\}/g)) {
-    if (toMathML(m[1]).includes("math-raw")) issues.push({ where, problem: `maths markup failed to parse: {{${m[1]}}}` });
+  let idx = 0;
+  while ((idx = s.indexOf("{{", idx)) >= 0) {
+    const end = findMathClose(s, idx);
+    if (end < 0) {
+      issues.push({ where, problem: `unclosed {{ maths span near "${s.slice(idx, idx + 40)}"` });
+      break;
+    }
+    const inner = s.slice(idx + 2, end);
+    if (toMathML(inner).includes("math-raw")) issues.push({ where, problem: `maths markup failed to parse: {{${inner}}}` });
+    idx = end + 2;
   }
 }
 

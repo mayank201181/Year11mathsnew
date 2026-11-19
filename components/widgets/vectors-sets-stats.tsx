@@ -195,12 +195,12 @@ function VennConditionalLab() {
   const nB = bOnly + both;
   const total = aOnly + both + bOnly + outside;
 
-  const regionCounts: Record<VennRegionKey, { label: string; count: number; inAOnly: boolean; inBoth: boolean; inBOnly: boolean; inOut: boolean }> = {
-    inter: { label: "A ∩ B", count: both, inAOnly: false, inBoth: true, inBOnly: false, inOut: false },
-    union: { label: "A ∪ B", count: aOnly + both + bOnly, inAOnly: true, inBoth: true, inBOnly: true, inOut: false },
-    aOnly: { label: "A ∩ B′ (A only)", count: aOnly, inAOnly: true, inBoth: false, inBOnly: false, inOut: false },
-    compA: { label: "A′ (not in A)", count: bOnly + outside, inAOnly: false, inBoth: false, inBOnly: true, inOut: true },
-    outside: { label: "(A ∪ B)′ = A′ ∩ B′", count: outside, inAOnly: false, inBoth: false, inBOnly: false, inOut: true },
+  const regionCounts: Record<VennRegionKey, { label: string; shortLabel: string; count: number; inAOnly: boolean; inBoth: boolean; inBOnly: boolean; inOut: boolean }> = {
+    inter: { label: "A ∩ B", shortLabel: "A ∩ B", count: both, inAOnly: false, inBoth: true, inBOnly: false, inOut: false },
+    union: { label: "A ∪ B", shortLabel: "A ∪ B", count: aOnly + both + bOnly, inAOnly: true, inBoth: true, inBOnly: true, inOut: false },
+    aOnly: { label: "A ∩ B′ (A only)", shortLabel: "A ∩ B′", count: aOnly, inAOnly: true, inBoth: false, inBOnly: false, inOut: false },
+    compA: { label: "A′ (not in A)", shortLabel: "A′", count: bOnly + outside, inAOnly: false, inBoth: false, inBOnly: true, inOut: true },
+    outside: { label: "(A ∪ B)′ = A′ ∩ B′", shortLabel: "(A ∪ B)′", count: outside, inAOnly: false, inBoth: false, inBOnly: false, inOut: true },
   };
 
   const sel = regionCounts[region];
@@ -236,7 +236,7 @@ function VennConditionalLab() {
         />
 
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-          <Readout label={`n(${sel.label.split(" ")[0]})`} value={`${sel.count} / ${total}`} tone="brand" />
+          <Readout label={`n(${sel.shortLabel})`} value={`${sel.count} / ${total}`} tone="brand" />
           <Readout label="n(A) , n(B)" value={`${nA} , ${nB}`} tone="ink" />
           <Readout label="P(A | B)" value={nB > 0 ? simpFrac(both, nB) : "—"} tone="good" />
           <Readout label="P(B | A)" value={nA > 0 ? simpFrac(both, nA) : "—"} tone="good" />

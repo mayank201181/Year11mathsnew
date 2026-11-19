@@ -44,7 +44,17 @@ const TABS: { id: TopicTab; label: string; icon: string }[] = [
   { id: "shorts", label: "Shorts", icon: "📱" },
 ];
 
-const parseTab = (v: string | null): TopicTab => (TABS.some((t) => t.id === v) ? (v as TopicTab) : "learn");
+const TAB_ALIASES: Record<string, TopicTab> = {
+  practice: "practise",
+  interactive: "explore",
+  pitfalls: "revise",
+};
+
+const parseTab = (v: string | null): TopicTab => {
+  if (!v) return "learn";
+  const mapped = TAB_ALIASES[v] ?? v;
+  return TABS.some((t) => t.id === mapped) ? (mapped as TopicTab) : "learn";
+};
 
 /** Sticky site header height (h-14 + 1px border). */
 const HEADER_OFFSET = 57;

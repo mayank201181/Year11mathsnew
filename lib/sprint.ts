@@ -438,10 +438,10 @@ function stats(rng: Rng): SprintItem {
     const after = clean(orig * mult);
     const label = pct > 0 ? `after a {{${pct}%}} increase` : `after a {{${Math.abs(pct)}%}} discount`;
     return itemWithSpec({
-      prompt: `Price is {{\\$${after}}} ${label}. Original price?`,
+      prompt: `Price is {{$${after}}} ${label}. Original price?`,
       answer: orig,
       allowFraction: false,
-      fact: `Divide by {{${mult}}}: {{\\$${after} ÷ ${mult} = \\$${orig}}}`,
+      fact: `Divide by {{${mult}}}: {{$${after} ÷ ${mult} = $${orig}}}`,
       mode: "stats",
     });
   }
