@@ -49,7 +49,7 @@ export const SITCOM_EPISODES: SitcomEpisode[] = [
     "topicShort": "Series, Functions & Curves",
     "title": "What The F Inverse",
     "logline": "Dad tries to sum fifteen rows of prata by hand, flips a fraction upside down for an inverse function, and shifts a parabola the wrong way into Mum's wall.",
-    "durationSec": 437,
+    "durationSec": 438,
     "src": "/videos/sequences-functions-graphs.mp4",
     "poster": "/videos/posters/sequences-functions-graphs.jpg"
   },
@@ -59,7 +59,7 @@ export const SITCOM_EPISODES: SitcomEpisode[] = [
     "topicShort": "Calculus & Kinematics",
     "title": "Zero Velocity, Maximum Drama",
     "logline": "Dad launches a drone indoors, Vani commits a fraction-differentiation crime, and the Chief Examiner materialises to rescue her stationary points and turnaround distances.",
-    "durationSec": 413,
+    "durationSec": 421,
     "src": "/videos/calculus-kinematics.mp4",
     "poster": "/videos/posters/calculus-kinematics.jpg"
   },
@@ -89,7 +89,7 @@ export const SITCOM_EPISODES: SitcomEpisode[] = [
     "topicShort": "Vectors, Sets & Histograms",
     "title": "Dense And Denser",
     "logline": "Dad draws a misleading neighbourhood traffic chart, Uncle gambles curry puffs without replacement, and the Edexcel Examiner confiscates Vani's collinearity mark until she names the shared point.",
-    "durationSec": 427,
+    "durationSec": 426,
     "src": "/videos/vectors-sets-stats.mp4",
     "poster": "/videos/posters/vectors-sets-stats.jpg"
   }

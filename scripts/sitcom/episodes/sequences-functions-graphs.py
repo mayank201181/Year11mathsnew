@@ -5,78 +5,77 @@ EP = dict(
     logline="Dad tries to sum fifteen rows of prata by hand, flips a fraction upside down for an inverse function, and shifts a parabola the wrong way into Mum's wall.",
 )
 
-DIAG_GAUSS = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 175">
-  <rect width="520" height="175" rx="12" fill="#0f172a" stroke="#475569" stroke-width="2"/>
-  <text x="20" y="26" font-size="14" font-weight="bold" fill="#fde047">Gauss Pairing: a = 6, d = 4, n = 15 → l = 62</text>
-  <rect x="28" y="118" width="54" height="28" rx="4" fill="#6366f1"/>
-  <rect x="90" y="102" width="54" height="44" rx="4" fill="#6366f1"/>
-  <rect x="152" y="86" width="54" height="60" rx="4" fill="#6366f1"/>
-  <rect x="234" y="54" width="54" height="92" rx="4" fill="#6366f1"/>
-  <rect x="28" y="24" width="54" height="92" rx="4" fill="#f59e0b" opacity="0.9"/>
-  <rect x="90" y="24" width="54" height="76" rx="4" fill="#f59e0b" opacity="0.9"/>
-  <rect x="152" y="24" width="54" height="60" rx="4" fill="#f59e0b" opacity="0.9"/>
-  <rect x="234" y="24" width="54" height="28" rx="4" fill="#f59e0b" opacity="0.9"/>
-  <text x="55" y="137" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">6</text>
-  <text x="117" y="129" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">10</text>
-  <text x="179" y="121" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">14</text>
-  <text x="220" y="105" font-size="14" font-weight="bold" fill="#94a3b8" text-anchor="middle">…</text>
-  <text x="261" y="106" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">62</text>
-  <text x="55" y="74" font-size="12" font-weight="bold" fill="#451a03" text-anchor="middle">62</text>
-  <text x="261" y="42" font-size="12" font-weight="bold" fill="#451a03" text-anchor="middle">6</text>
-  <text x="312" y="68" font-size="14" font-weight="bold" fill="#86efac">Pair = 6 + 62 = 68</text>
-  <text x="312" y="96" font-size="13" fill="#e2e8f0">S₁₅ = (15 / 2)(2a + 14d)</text>
-  <text x="312" y="124" font-size="15" font-weight="bold" fill="#38bdf8">= 7.5 × 68 = 510</text>
-  <text x="158" y="164" font-size="12" fill="#cbd5e1" text-anchor="middle">15 columns wide</text>
+DIAG_GAUSS = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 350">
+  <rect width="780" height="350" rx="14" fill="#0f172a" stroke="#475569" stroke-width="2.5"/>
+  <text x="390" y="48" font-family="sans-serif" font-size="28" font-weight="bold" fill="#fde047" text-anchor="middle">Gauss Pairing: a = 6, d = 4, n = 15 → l = 62</text>
+  <rect x="30" y="218" width="68" height="58" rx="6" fill="#6366f1"/>
+  <rect x="108" y="186" width="68" height="90" rx="6" fill="#6366f1"/>
+  <rect x="186" y="154" width="68" height="122" rx="6" fill="#6366f1"/>
+  <rect x="288" y="106" width="68" height="170" rx="6" fill="#6366f1"/>
+  <rect x="30" y="76" width="68" height="138" rx="6" fill="#f59e0b" opacity="0.92"/>
+  <rect x="108" y="76" width="68" height="106" rx="6" fill="#f59e0b" opacity="0.92"/>
+  <rect x="186" y="76" width="68" height="74" rx="6" fill="#f59e0b" opacity="0.92"/>
+  <rect x="288" y="76" width="68" height="26" rx="6" fill="#f59e0b" opacity="0.92"/>
+  <text x="64" y="257" font-family="sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">6</text>
+  <text x="142" y="242" font-family="sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">10</text>
+  <text x="220" y="226" font-family="sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">14</text>
+  <text x="271" y="190" font-family="sans-serif" font-size="28" font-weight="bold" fill="#94a3b8" text-anchor="middle">…</text>
+  <text x="322" y="202" font-family="sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">62</text>
+  <text x="64" y="156" font-family="sans-serif" font-size="28" font-weight="bold" fill="#451a03" text-anchor="middle">62</text>
+  <text x="193" y="322" font-family="sans-serif" font-size="28" font-weight="bold" fill="#cbd5e1" text-anchor="middle">15 columns wide</text>
+  <text x="394" y="128" font-family="sans-serif" font-size="30" font-weight="bold" fill="#86efac">Pair = 6 + 62 = 68</text>
+  <text x="394" y="196" font-family="sans-serif" font-size="28" fill="#e2e8f0">S₁₅ = (15/2)(2a+14d)</text>
+  <text x="394" y="266" font-family="sans-serif" font-size="32" font-weight="bold" fill="#38bdf8">= 7.5 × 68 = 510 ✔</text>
 </svg>"""
 
-DIAG_FUNCS = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 185">
-  <rect width="520" height="185" rx="12" fill="#0f172a" stroke="#475569" stroke-width="2"/>
-  <text x="18" y="26" font-size="14" font-weight="bold" fill="#fde047">1) Composite fg(3): Apply g FIRST (Inside-Out!)</text>
-  <rect x="20" y="40" width="64" height="36" rx="7" fill="#1e293b" stroke="#94a3b8"/>
-  <text x="52" y="63" font-size="13" font-weight="bold" fill="#f8fafc" text-anchor="middle">x = 3</text>
-  <line x1="84" y1="58" x2="118" y2="58" stroke="#38bdf8" stroke-width="2.5"/>
-  <rect x="120" y="40" width="140" height="36" rx="7" fill="#1e3a8a" stroke="#60a5fa"/>
-  <text x="190" y="63" font-size="13" font-weight="bold" fill="#bfdbfe" text-anchor="middle">g(3) = 3² + 2 = 11</text>
-  <line x1="260" y1="58" x2="294" y2="58" stroke="#c084fc" stroke-width="2.5"/>
-  <rect x="296" y="40" width="204" height="36" rx="7" fill="#4c1d95" stroke="#c084fc"/>
-  <text x="398" y="63" font-size="13" font-weight="bold" fill="#f3e8ff" text-anchor="middle">f(11) = 3(11) − 5 = 28</text>
-  <line x1="18" y1="92" x2="502" y2="92" stroke="#334155" stroke-width="1.5"/>
-  <text x="18" y="114" font-size="14" font-weight="bold" fill="#86efac">2) Inverse of h(x) = (2x + 5) / (x − 3): Swap x &amp; y!</text>
-  <text x="22" y="140" font-size="13" fill="#f8fafc">x = (2y + 5)/(y − 3)  →  xy − 3x = 2y + 5</text>
-  <text x="22" y="166" font-size="14" font-weight="bold" fill="#38bdf8">y(x − 2) = 3x + 5  →  h⁻¹(x) = (3x + 5)/(x − 2)  (x ≠ 2)</text>
+DIAG_FUNCS = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 350">
+  <rect width="780" height="350" rx="14" fill="#0f172a" stroke="#475569" stroke-width="2.5"/>
+  <text x="390" y="44" font-family="sans-serif" font-size="28" font-weight="bold" fill="#fde047" text-anchor="middle">1) fg(3): Apply g FIRST (Inside-Out!)</text>
+  <rect x="26" y="66" width="128" height="68" rx="10" fill="#1e293b" stroke="#94a3b8" stroke-width="2"/>
+  <text x="90" y="110" font-family="sans-serif" font-size="28" font-weight="bold" fill="#f8fafc" text-anchor="middle">x = 3</text>
+  <text x="180" y="110" font-family="sans-serif" font-size="32" font-weight="bold" fill="#38bdf8" text-anchor="middle">→</text>
+  <rect x="206" y="66" width="234" height="68" rx="10" fill="#1e3a8a" stroke="#60a5fa" stroke-width="2"/>
+  <text x="323" y="110" font-family="sans-serif" font-size="28" font-weight="bold" fill="#bfdbfe" text-anchor="middle">g(3) = 3²+2 = 11</text>
+  <text x="466" y="110" font-family="sans-serif" font-size="32" font-weight="bold" fill="#c084fc" text-anchor="middle">→</text>
+  <rect x="492" y="66" width="262" height="68" rx="10" fill="#4c1d95" stroke="#c084fc" stroke-width="2"/>
+  <text x="623" y="110" font-family="sans-serif" font-size="28" font-weight="bold" fill="#f3e8ff" text-anchor="middle">f(11) = 33−5 = 28</text>
+  <line x1="24" y1="158" x2="756" y2="158" stroke="#334155" stroke-width="2"/>
+  <text x="390" y="202" font-family="sans-serif" font-size="28" font-weight="bold" fill="#86efac" text-anchor="middle">2) Inverse h(x)=(2x+5)/(x−3): Swap x &amp; y</text>
+  <text x="390" y="258" font-family="sans-serif" font-size="28" fill="#f8fafc" text-anchor="middle">xy − 3x = 2y + 5  →  y(x − 2) = 3x + 5</text>
+  <text x="390" y="316" font-family="sans-serif" font-size="30" font-weight="bold" fill="#38bdf8" text-anchor="middle">h⁻¹(x) = (3x+5)/(x−2)   (x ≠ 2)</text>
 </svg>"""
 
-DIAG_TRANS = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 185">
-  <rect width="520" height="185" rx="12" fill="#0f172a" stroke="#475569" stroke-width="2"/>
-  <line x1="28" y1="95" x2="492" y2="95" stroke="#64748b" stroke-width="1.6"/>
-  <line x1="230" y1="16" x2="230" y2="172" stroke="#64748b" stroke-width="1.6"/>
-  <path d="M 280 36 Q 340 220 400 36" fill="none" stroke="#60a5fa" stroke-width="2.8"/>
-  <circle cx="340" cy="128" r="5" fill="#60a5fa"/>
-  <text x="352" y="144" font-size="12" font-weight="bold" fill="#93c5fd">f(x): (4, −3)</text>
-  <path d="M 142 36 Q 202 220 262 36" fill="none" stroke="#34d399" stroke-width="2.8" stroke-dasharray="6 3"/>
-  <circle cx="202" cy="128" r="5" fill="#34d399"/>
-  <text x="128" y="148" font-size="12" font-weight="bold" fill="#6ee7b7">f(x + 5): (−1, −3)</text>
-  <path d="M 280 154 Q 340 -30 400 154" fill="none" stroke="#f472b6" stroke-width="2.5"/>
-  <circle cx="340" cy="62" r="5" fill="#f472b6"/>
-  <text x="352" y="54" font-size="12" font-weight="bold" fill="#f9a8d4">−f(x): (4, 3)</text>
-  <line x1="330" y1="128" x2="214" y2="128" stroke="#fde047" stroke-width="2"/>
-  <text x="272" y="120" font-size="11" font-weight="bold" fill="#fde047" text-anchor="middle">LEFT 5!</text>
+DIAG_TRANS = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 350">
+  <rect width="780" height="350" rx="14" fill="#0f172a" stroke="#475569" stroke-width="2.5"/>
+  <line x1="30" y1="184" x2="750" y2="184" stroke="#64748b" stroke-width="2"/>
+  <line x1="365" y1="20" x2="365" y2="332" stroke="#64748b" stroke-width="2"/>
+  <path d="M 442 64 Q 530 434 618 64" fill="none" stroke="#60a5fa" stroke-width="4"/>
+  <circle cx="530" cy="249" r="7" fill="#60a5fa"/>
+  <text x="615" y="294" font-family="sans-serif" font-size="28" font-weight="bold" fill="#93c5fd" text-anchor="middle">f(x): (4,−3)</text>
+  <path d="M 162 64 Q 250 434 338 64" fill="none" stroke="#34d399" stroke-width="4" stroke-dasharray="9 5"/>
+  <circle cx="250" cy="249" r="7" fill="#34d399"/>
+  <text x="200" y="316" font-family="sans-serif" font-size="28" font-weight="bold" fill="#6ee7b7" text-anchor="middle">f(x+5): (−1,−3)</text>
+  <path d="M 442 304 Q 530 -66 618 304" fill="none" stroke="#f472b6" stroke-width="3.5"/>
+  <circle cx="530" cy="119" r="7" fill="#f472b6"/>
+  <text x="530" y="54" font-family="sans-serif" font-size="28" font-weight="bold" fill="#f9a8d4" text-anchor="middle">−f(x): (4, 3)</text>
+  <line x1="516" y1="249" x2="266" y2="249" stroke="#fde047" stroke-width="3.5"/>
+  <text x="390" y="232" font-family="sans-serif" font-size="28" font-weight="bold" fill="#fde047" text-anchor="middle">← LEFT 5</text>
 </svg>"""
 
-DIAG_CUBIC = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 175">
-  <rect width="520" height="175" rx="12" fill="#0f172a" stroke="#475569" stroke-width="2"/>
-  <text x="18" y="25" font-size="13" font-weight="bold" fill="#fde047">Plotted: y = x³ − 3x + 1  |  Solve: x³ − 5x − 2 = 0</text>
-  <line x1="30" y1="102" x2="250" y2="102" stroke="#64748b" stroke-width="1.4"/>
-  <line x1="140" y1="36" x2="140" y2="162" stroke="#64748b" stroke-width="1.4"/>
-  <path d="M 58 156 C 95 40, 122 40, 140 94 C 158 148, 185 148, 222 38" fill="none" stroke="#a78bfa" stroke-width="2.8"/>
-  <line x1="54" y1="138" x2="226" y2="48" stroke="#34d399" stroke-width="2.4"/>
-  <circle cx="71" cy="129" r="4.5" fill="#fde047"/>
-  <circle cx="148" cy="89" r="4.5" fill="#fde047"/>
-  <circle cx="212" cy="55" r="4.5" fill="#fde047"/>
-  <text x="268" y="64" font-size="13" fill="#f8fafc">Match plotted LHS:</text>
-  <text x="268" y="92" font-size="14" font-weight="bold" fill="#86efac">x³ − 3x + 1 = 2x + 3</text>
-  <text x="268" y="120" font-size="13" fill="#38bdf8">Draw line y = 2x + 3</text>
-  <text x="268" y="148" font-size="12" fill="#fca5a5">Read ONLY x at intersections!</text>
+DIAG_CUBIC = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 350">
+  <rect width="780" height="350" rx="14" fill="#0f172a" stroke="#475569" stroke-width="2.5"/>
+  <text x="390" y="46" font-family="sans-serif" font-size="28" font-weight="bold" fill="#fde047" text-anchor="middle">Curve: y=x³−3x+1 | Solve: x³−5x−2=0</text>
+  <line x1="36" y1="205" x2="342" y2="205" stroke="#64748b" stroke-width="2"/>
+  <line x1="189" y1="74" x2="189" y2="328" stroke="#64748b" stroke-width="2"/>
+  <path d="M 70 318 C 122 86, 162 86, 189 190 C 216 294, 256 294, 308 82" fill="none" stroke="#a78bfa" stroke-width="4"/>
+  <line x1="60" y1="280" x2="318" y2="104" stroke="#34d399" stroke-width="3.5"/>
+  <circle cx="88" cy="260" r="7" fill="#fde047"/>
+  <circle cx="201" cy="184" r="7" fill="#fde047"/>
+  <circle cx="294" cy="120" r="7" fill="#fde047"/>
+  <text x="374" y="118" font-family="sans-serif" font-size="28" fill="#f8fafc">Match curve LHS:</text>
+  <text x="374" y="176" font-family="sans-serif" font-size="30" font-weight="bold" fill="#86efac">x³−3x+1 = 2x+3</text>
+  <text x="374" y="236" font-family="sans-serif" font-size="28" font-weight="bold" fill="#38bdf8">Draw y = 2x + 3</text>
+  <text x="374" y="296" font-family="sans-serif" font-size="28" font-weight="bold" fill="#fca5a5">Read x-coords only!</text>
 </svg>"""
 
 title()

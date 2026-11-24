@@ -86,18 +86,19 @@ async def main():
                     "-f", "image2pipe", "-framerate", str(fps), "-c:v", "mjpeg", "-i", "-",
                     "-vf", "scale=in_range=full:out_range=tv,format=yuv420p",
                     "-c:v", "libx264", "-threads", "1", "-preset", "veryfast", "-crf", "24",
-                    "-pix_fmt", "yuv420p", "-color_range", "tv", "-tune", "animation",
+                    "-r", str(fps), "-pix_fmt", "yuv420p", "-color_range", "tv", "-tune", "animation",
                     seg,
                     stdin=asyncio.subprocess.PIPE,
                 )
-                for i in range(a, b, 16):
-                    ts = [k / fps for k in range(i, min(b, i + 16))]
-                    ds = await pg.evaluate("(ts) => ts.map(t => window.frameJpeg(t, 0.88))", ts)
-                    for d in ds:
-                        proc.stdin.write(base64.b64decode(d.split(",", 1)[1]))
+                batch = 24
+                for i in range(a, b, batch):
+                    cnt = min(batch, b - i)
+                    ds = await pg.evaluate("([i0, cnt, fps]) => window.framesBatch(i0, cnt, fps, 0.85)", [i, cnt, fps])
+                    for b64 in ds:
+                        proc.stdin.write(base64.b64decode(b64))
                     await proc.stdin.drain()
-                    if w == 0 and ((i - a) // 16) % 15 == 0:
-                        print(f"w0 {i - a}/{b - a}  {time.time() - t0:.0f}s", flush=True)
+                    if w == 0 and ((i - a) // batch) % 15 == 0:
+                        print(f"w0 {min(b, i + cnt) - a}/{b - a}  {time.time() - t0:.0f}s", flush=True)
                 proc.stdin.close()
                 await proc.wait()
                 if proc.returncode != 0:

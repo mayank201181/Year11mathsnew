@@ -5,13 +5,67 @@ EP = dict(
     logline="Dad launches a drone indoors, Vani commits a fraction-differentiation crime, and the Chief Examiner materialises to rescue her stationary points and turnaround distances.",
 )
 
-DIAG_POWER = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200"><rect x="4" y="4" width="512" height="192" rx="14" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/><text x="260" y="34" font-size="16" font-weight="bold" fill="#38bdf8" text-anchor="middle">REWRITE BEFORE YOU DIFFERENTIATE!</text><rect x="24" y="52" width="224" height="124" rx="10" fill="#450a0a" stroke="#ef4444" stroke-width="2"/><text x="136" y="78" font-size="14" font-weight="bold" fill="#fca5a5" text-anchor="middle">NEVER DO THIS</text><text x="136" y="108" font-size="14" fill="#fecaca" text-anchor="middle">y = (x³ − 4) / x²</text><text x="136" y="136" font-size="14" fill="#ef4444" text-anchor="middle">dy/dx = 3x² / 2x  (WRONG!)</text><rect x="272" y="52" width="224" height="124" rx="10" fill="#052e16" stroke="#22c55e" stroke-width="2"/><text x="384" y="78" font-size="14" font-weight="bold" fill="#86efac" text-anchor="middle">SPLIT &amp; INDEX FIRST</text><text x="384" y="108" font-size="14" fill="#bbf7d0" text-anchor="middle">y = x − 4x⁻²</text><text x="384" y="136" font-size="14" font-weight="bold" fill="#4ade80" text-anchor="middle">dy/dx = 1 + 8x⁻³</text><text x="384" y="160" font-size="12" fill="#86efac" text-anchor="middle">= 1 + 8 / x³</text></svg>'
+DIAG_POWER = (
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 350">'
+    '<rect x="8" y="8" width="764" height="334" rx="14" fill="#0f172a" stroke="#38bdf8" stroke-width="2.5"/>'
+    '<text x="390" y="54" font-family="sans-serif" font-size="30" font-weight="bold" fill="#38bdf8" text-anchor="middle">REWRITE BEFORE DIFFERENTIATING!</text>'
+    '<rect x="24" y="78" width="356" height="244" rx="12" fill="#450a0a" stroke="#ef4444" stroke-width="2.5"/>'
+    '<text x="202" y="124" font-family="sans-serif" font-size="28" font-weight="bold" fill="#fca5a5" text-anchor="middle">NEVER DO THIS</text>'
+    '<text x="202" y="188" font-family="sans-serif" font-size="28" fill="#fecaca" text-anchor="middle">y = (x³ − 4) / x²</text>'
+    '<text x="202" y="256" font-family="sans-serif" font-size="28" font-weight="bold" fill="#ef4444" text-anchor="middle">dy/dx = 3x²/2x  ✘</text>'
+    '<rect x="400" y="78" width="356" height="244" rx="12" fill="#052e16" stroke="#22c55e" stroke-width="2.5"/>'
+    '<text x="578" y="124" font-family="sans-serif" font-size="28" font-weight="bold" fill="#86efac" text-anchor="middle">SPLIT &amp; INDEX FIRST</text>'
+    '<text x="578" y="182" font-family="sans-serif" font-size="28" fill="#bbf7d0" text-anchor="middle">y = x − 4x⁻²</text>'
+    '<text x="578" y="242" font-family="sans-serif" font-size="30" font-weight="bold" fill="#4ade80" text-anchor="middle">dy/dx = 1 + 8x⁻³</text>'
+    '<text x="578" y="296" font-family="sans-serif" font-size="28" fill="#86efac" text-anchor="middle">= 1 + 8 / x³  ✔</text>'
+    '</svg>'
+)
 
-DIAG_TANGENT = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 210"><rect x="4" y="4" width="512" height="202" rx="14" fill="#0f172a" stroke="#a855f7" stroke-width="2"/><line x1="50" y1="175" x2="470" y2="175" stroke="#64748b" stroke-width="1.5"/><line x1="80" y1="190" x2="80" y2="25" stroke="#64748b" stroke-width="1.5"/><path d="M 75 162 Q 215 170 385 28" fill="none" stroke="#38bdf8" stroke-width="3"/><line x1="135" y1="184" x2="405" y2="32" stroke="#4ade80" stroke-width="2.5"/><line x1="185" y1="26" x2="335" y2="292" stroke="#f472b6" stroke-width="2.2" stroke-dasharray="6 4"/><circle cx="265" cy="111" r="6" fill="#facc15"/><text x="252" y="100" font-size="13" font-weight="bold" fill="#facc15" text-anchor="end">P(x₁, y₁)</text><text x="415" y="54" font-size="13" font-weight="bold" fill="#4ade80" text-anchor="end">Tangent: m_T = dy/dx</text><text x="196" y="44" font-size="13" font-weight="bold" fill="#f472b6">Normal: m_N = −1 / m_T</text></svg>'
+DIAG_TANGENT = (
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 350">'
+    '<rect x="8" y="8" width="764" height="334" rx="14" fill="#0f172a" stroke="#a855f7" stroke-width="2.5"/>'
+    '<line x1="60" y1="298" x2="720" y2="298" stroke="#64748b" stroke-width="2"/>'
+    '<line x1="110" y1="322" x2="110" y2="32" stroke="#64748b" stroke-width="2"/>'
+    '<path d="M 105 278 Q 315 288 575 44" fill="none" stroke="#38bdf8" stroke-width="4.5"/>'
+    '<line x1="190" y1="316" x2="605" y2="54" stroke="#4ade80" stroke-width="3.5"/>'
+    '<line x1="278" y1="42" x2="478" y2="322" stroke="#f472b6" stroke-width="3.2" stroke-dasharray="9 6"/>'
+    '<circle cx="388" cy="191" r="9" fill="#facc15"/>'
+    '<text x="364" y="184" font-family="sans-serif" font-size="28" font-weight="bold" fill="#facc15" text-anchor="end">P(x₁, y₁)</text>'
+    '<text x="742" y="114" font-family="sans-serif" font-size="28" font-weight="bold" fill="#4ade80" text-anchor="end">Tangent: m_T = dy/dx</text>'
+    '<text x="300" y="64" font-family="sans-serif" font-size="28" font-weight="bold" fill="#f472b6">Normal: m_N = −1/m_T</text>'
+    '</svg>'
+)
 
-DIAG_MAXMIN = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 210"><rect x="4" y="4" width="512" height="202" rx="14" fill="#0f172a" stroke="#f59e0b" stroke-width="2"/><path d="M 70 175 C 125 35, 195 35, 260 108 C 325 181, 395 181, 450 32" fill="none" stroke="#38bdf8" stroke-width="3.2"/><line x1="115" y1="62" x2="205" y2="62" stroke="#f87171" stroke-width="2.4" stroke-dasharray="5 3"/><line x1="315" y1="154" x2="405" y2="154" stroke="#4ade80" stroke-width="2.4" stroke-dasharray="5 3"/><circle cx="160" cy="62" r="6" fill="#f87171"/><circle cx="360" cy="154" r="6" fill="#4ade80"/><text x="160" y="44" font-size="14" font-weight="bold" fill="#f87171" text-anchor="middle">LOCAL MAX (dy/dx = 0)</text><text x="160" y="84" font-size="12" fill="#fca5a5" text-anchor="middle">d²y/dx² &lt; 0  (sad cap)</text><text x="360" y="138" font-size="14" font-weight="bold" fill="#4ade80" text-anchor="middle">LOCAL MIN (dy/dx = 0)</text><text x="360" y="182" font-size="12" fill="#86efac" text-anchor="middle">d²y/dx² &gt; 0  (smiley cup)</text></svg>'
+DIAG_MAXMIN = (
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 350">'
+    '<rect x="8" y="8" width="764" height="334" rx="14" fill="#0f172a" stroke="#f59e0b" stroke-width="2.5"/>'
+    '<path d="M 75 298 C 165 66, 285 66, 390 184 C 495 302, 615 302, 705 56" fill="none" stroke="#38bdf8" stroke-width="4.5"/>'
+    '<line x1="150" y1="108" x2="310" y2="108" stroke="#f87171" stroke-width="3.2" stroke-dasharray="8 5"/>'
+    '<line x1="470" y1="256" x2="630" y2="256" stroke="#4ade80" stroke-width="3.2" stroke-dasharray="8 5"/>'
+    '<circle cx="230" cy="108" r="9" fill="#f87171"/>'
+    '<circle cx="550" cy="256" r="9" fill="#4ade80"/>'
+    '<text x="230" y="58" font-family="sans-serif" font-size="28" font-weight="bold" fill="#f87171" text-anchor="middle">LOCAL MAX (dy/dx=0)</text>'
+    '<text x="230" y="156" font-family="sans-serif" font-size="28" font-weight="bold" fill="#fca5a5" text-anchor="middle">d²y/dx² &lt; 0 (cap)</text>'
+    '<text x="550" y="218" font-family="sans-serif" font-size="28" font-weight="bold" fill="#4ade80" text-anchor="middle">LOCAL MIN (dy/dx=0)</text>'
+    '<text x="550" y="314" font-family="sans-serif" font-size="28" font-weight="bold" fill="#86efac" text-anchor="middle">d²y/dx² &gt; 0 (cup)</text>'
+    '</svg>'
+)
 
-DIAG_KIN = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 190"><rect x="4" y="4" width="512" height="182" rx="14" fill="#0f172a" stroke="#22c55e" stroke-width="2"/><text x="260" y="30" font-size="15" font-weight="bold" fill="#4ade80" text-anchor="middle">S → V = ds/dt → A = dv/dt   (REVERSAL AT v = 0!)</text><line x1="55" y1="130" x2="465" y2="130" stroke="#94a3b8" stroke-width="2"/><circle cx="85" cy="130" r="6" fill="#38bdf8"/><text x="85" y="154" font-size="12" fill="#38bdf8" text-anchor="middle">O (s = 0, t = 0)</text><path d="M 85 95 L 415 95 C 442 95, 442 62, 415 62 L 295 62" fill="none" stroke="#facc15" stroke-width="3"/><polygon points="295,62 307,56 307,68" fill="#facc15"/><circle cx="428" cy="78" r="6" fill="#f87171"/><text x="428" y="48" font-size="12" font-weight="bold" fill="#f87171" text-anchor="middle">Rest v = 0 (s = 16 m)</text><text x="295" y="154" font-size="12" fill="#4ade80" text-anchor="middle">Finish s = 12 m</text><text x="260" y="176" font-size="13" font-weight="bold" fill="#f8fafc" text-anchor="middle">Displacement = 12 m   vs   Total Distance = 16 + 4 = 20 m!</text></svg>'
+DIAG_KIN = (
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 350">'
+    '<rect x="8" y="8" width="764" height="334" rx="14" fill="#0f172a" stroke="#22c55e" stroke-width="2.5"/>'
+    '<text x="390" y="50" font-family="sans-serif" font-size="28" font-weight="bold" fill="#4ade80" text-anchor="middle">S → V=ds/dt → A=dv/dt  (Turns at v=0)</text>'
+    '<line x1="70" y1="216" x2="710" y2="216" stroke="#94a3b8" stroke-width="3"/>'
+    '<circle cx="135" cy="216" r="9" fill="#38bdf8"/>'
+    '<text x="155" y="262" font-family="sans-serif" font-size="28" font-weight="bold" fill="#38bdf8" text-anchor="middle">Start s = 0</text>'
+    '<path d="M 135 162 L 620 162 C 664 162, 664 108, 620 108 L 430 108" fill="none" stroke="#facc15" stroke-width="4.5"/>'
+    '<polygon points="430,108 450,98 450,118" fill="#facc15"/>'
+    '<circle cx="642" cy="135" r="9" fill="#f87171"/>'
+    '<text x="545" y="92" font-family="sans-serif" font-size="28" font-weight="bold" fill="#f87171" text-anchor="middle">Rest v=0 (s=16m)</text>'
+    '<text x="485" y="262" font-family="sans-serif" font-size="28" font-weight="bold" fill="#4ade80" text-anchor="middle">Finish s = 12 m</text>'
+    '<text x="390" y="318" font-family="sans-serif" font-size="28" font-weight="bold" fill="#f8fafc" text-anchor="middle">Displ. = 12 m  vs  Distance = 16+4 = 20 m!</text>'
+    '</svg>'
+)
 
 title()
 
