@@ -295,10 +295,13 @@ function setClassroom(t) {
   ctx.fillStyle = '#fef9c3'; ctx.fillRect(0, 0, W, H);
   ctx.fillStyle = '#e2e8f0'; ctx.fillRect(0, 470, W, 250);
   ctx.fillStyle = '#94a3b8'; ctx.fillRect(0, 462, W, 10);
-  ctx.fillStyle = '#7c2d12'; rr(60, 70, 520, 300, 8); ctx.fill(); ctx.fillStyle = '#f8fafc'; rr(72, 82, 496, 276, 4); ctx.fill();
-  ctx.font = '400 30px Hand'; ctx.textAlign = 'left'; ctx.fillStyle = '#1e3a8a'; ctx.fillText('Today: no calculators :(', 92, 130);
-  ctx.fillStyle = '#dc2626'; ctx.fillText('Homework due FRIDAY', 92, 180); ctx.fillStyle = '#16a34a'; ctx.fillText('Show your working!', 92, 230);
-  ctx.fillStyle = '#334155'; ctx.fillRect(80, 360, 480, 8);
+  // Whiteboard raised + text placed in upper zone (y=82..146) so character heads never overlap it in wide, two, close, or split-screen shots
+  ctx.fillStyle = '#7c2d12'; rr(60, 48, 520, 226, 8); ctx.fill(); ctx.fillStyle = '#f8fafc'; rr(70, 58, 500, 206, 4); ctx.fill();
+  ctx.font = '400 26px Hand'; ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+  ctx.fillStyle = '#1e3a8a'; ctx.fillText('Today: no calculators :(', 86, 82);
+  ctx.fillStyle = '#dc2626'; ctx.fillText('Homework due FRIDAY', 86, 114);
+  ctx.fillStyle = '#16a34a'; ctx.fillText('Show your working!', 86, 146);
+  ctx.fillStyle = '#334155'; ctx.fillRect(78, 266, 484, 8);
   circ(820, 140, 54); fillC('#fff'); strokeC('#1f2937', 6); ctx.beginPath(); ctx.moveTo(820, 140); ctx.lineTo(820, 104); ctx.moveTo(820, 140); ctx.lineTo(846, 150); strokeC('#1f2937', 5);
   ctx.fillStyle = '#bae6fd'; rr(960, 80, 260, 200, 8); ctx.fill(); ctx.fillStyle = '#fff'; ctx.fillRect(1086, 80, 8, 200); ctx.fillRect(960, 176, 260, 8);
   for (let i = 0; i < 3; i++) { ctx.fillStyle = '#b45309'; rr(640 + i * 210, 520, 170, 20, 4); ctx.fill(); ctx.fillStyle = '#92400e'; ctx.fillRect(650 + i * 210, 540, 10, 90); ctx.fillRect(800 + i * 210, 540, 10, 90); }

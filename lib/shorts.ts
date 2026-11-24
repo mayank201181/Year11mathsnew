@@ -819,12 +819,12 @@ export const SHORTS: ShortClip[] = [
         "text": "Stand back, Uncle! My phone calculator and lightning thumbs were born for this moment."
       },
       {
-        "t": 23.93,
+        "t": 23.89,
         "who": "Dad",
         "text": "Six, ten, fourteen, eighteen, wait. Did I already tap eighteen or twenty-two?"
       },
       {
-        "t": 30.72,
+        "t": 30.68,
         "who": "Vanishree",
         "text": "Dad, watching you add fifteen terms one by one is aging me by the minute."
       }
@@ -842,76 +842,71 @@ export const SHORTS: ShortClip[] = [
     "totalInTopic": 4,
     "title": "Functions & Graphs: Sigma's Holo-Board Method",
     "summary": "Core Edexcel 4MA1 working steps and visual diagram for Series, Functions & Curves.",
-    "startSec": 45.4,
-    "endSec": 110.4,
+    "startSec": 45.3,
+    "endSec": 110.3,
     "durationSec": 65,
     "src": "/videos/sequences-functions-graphs.mp4",
     "poster": "/videos/posters/sequences-functions-graphs.jpg",
     "captions": [
       {
-        "t": 3.18,
+        "t": 3.24,
         "who": "Sigma",
         "text": "Drop the phone before nine-year-old Gauss haunts your breakfast!"
       },
       {
-        "t": 7.46,
+        "t": 7.52,
         "who": "Sigma",
         "text": "First find the fifteenth term with a plus n minus one times d."
       },
       {
-        "t": 12.12,
+        "t": 12.19,
         "who": "Vanishree",
         "text": "Fourteen jumps of four is fifty-six, plus six gives sixty-two on the bottom tray."
       },
       {
-        "t": 17.45,
+        "t": 17.51,
         "who": "Sigma",
         "text": "Now stack a reversed copy on top!"
       },
       {
-        "t": 19.75,
+        "t": 19.81,
         "who": "Sigma",
         "text": "Six pairs with sixty-two to make sixty-eight across all fifteen columns!"
       },
       {
-        "t": 25.36,
+        "t": 25.43,
         "who": "Vanishree",
         "text": "Halve the rectangle: fifteen halves times sixty-eight gives five hundred and ten pratas!"
       },
       {
-        "t": 30.6,
+        "t": 30.67,
         "who": "Uncle Hock",
         "text": "Five hundred and ten! Spot on! Meanwhile your father is still tapping tray four."
       },
       {
-        "t": 36.52,
+        "t": 36.58,
         "who": "Dad",
         "text": "Wait! What about a quadratic sequence like four, thirteen, twenty-eight, forty-nine?"
       },
       {
-        "t": 43.13,
+        "t": 43.2,
         "who": "Vanishree",
         "text": "Take differences twice!"
       },
       {
-        "t": 44.63,
+        "t": 44.69,
         "who": "Vanishree",
         "text": "First differences are nine, fifteen, twenty-one, so the second difference is six."
       },
       {
-        "t": 50.48,
+        "t": 50.55,
         "who": "Sigma",
         "text": "Remember second difference equals two a! Halve six to get three n squared."
       },
       {
-        "t": 56.08,
+        "t": 56.14,
         "who": "Sigma",
         "text": "Subtract three n squared from four, thirteen, twenty-eight to leave one, one, one, giving three n squared plus one!"
-      },
-      {
-        "t": 64.97,
-        "who": "Sigma",
-        "text": "Challenge one! Find the sum of the first twelve terms of the arithmetic series five, eight, eleven, and so on."
       }
     ]
   },
@@ -934,47 +929,47 @@ export const SHORTS: ShortClip[] = [
     "poster": "/videos/posters/sequences-functions-graphs.jpg",
     "captions": [
       {
-        "t": 2.27,
+        "t": 2.2,
         "who": "Examiner",
         "text": "Every summer, Higher Tier candidates donate easy marks to my red pen on functions!"
       },
       {
-        "t": 8.01,
+        "t": 7.95,
         "who": "Examiner",
         "text": "First crime: working f g of x left to right!"
       },
       {
-        "t": 11.32,
+        "t": 11.26,
         "who": "Examiner",
         "text": "Always rewrite f g of x with brackets as f of g of x first."
       },
       {
-        "t": 16.36,
+        "t": 16.29,
         "who": "Examiner",
         "text": "Second crime: writing one over f of x when asked for f inverse of x!"
       },
       {
-        "t": 21.89,
+        "t": 21.83,
         "who": "Examiner",
         "text": "Third crime: writing the range of a quadratic using x instead of f of x!"
       },
       {
-        "t": 27.35,
+        "t": 27.28,
         "who": "Examiner",
         "text": "Range is outputs, never inputs!"
       },
       {
-        "t": 30.38,
+        "t": 30.31,
         "who": "Sigma",
         "text": "Challenge two! Given f of x is two x minus one, and g of x is x squared plus three, evaluate f g of four."
       },
       {
-        "t": 44.81,
+        "t": 44.74,
         "who": "Sigma",
         "text": "Apply g first: four squared plus three is nineteen. Feed nineteen into f: two times nineteen minus one gives thirty-seven!"
       },
       {
-        "t": 55.79,
+        "t": 55.73,
         "who": "Mum",
         "text": "Why is there a pencil cross on my framed batik painting, and why are you holding a paint roller?"
       }
@@ -992,34 +987,34 @@ export const SHORTS: ShortClip[] = [
     "totalInTopic": 4,
     "title": "Functions & Graphs: 5-Second Challenge Showdown",
     "summary": "Pause and beat Vanishree on an exam-grade Series, Functions & Curves question.",
-    "startSec": 108.1,
-    "endSec": 152.1,
+    "startSec": 108.0,
+    "endSec": 152.0,
     "durationSec": 44,
     "src": "/videos/sequences-functions-graphs.mp4",
     "poster": "/videos/posters/sequences-functions-graphs.jpg",
     "captions": [
       {
-        "t": 2.27,
+        "t": 2.34,
         "who": "Sigma",
         "text": "Challenge one! Find the sum of the first twelve terms of the arithmetic series five, eight, eleven, and so on."
       },
       {
-        "t": 16.53,
+        "t": 16.59,
         "who": "Sigma",
         "text": "First term five, common difference three: twelve halves is six, times ten plus thirty-three gives six times forty-three, which is two hundred and fifty-eight!"
       },
       {
-        "t": 29.32,
+        "t": 29.38,
         "who": "Dad",
         "text": "Time to redeem myself! I wrote two functions on my tablet for Mum's online cushion shop."
       },
       {
-        "t": 35.55,
+        "t": 35.62,
         "who": "Dad",
         "text": "Function f of x is three x minus five, and function g of x is x squared plus two."
       },
       {
-        "t": 41.8,
+        "t": 41.87,
         "who": "Dad",
         "text": "To evaluate f g of three, I read left to right!"
       }
@@ -1574,32 +1569,32 @@ export const SHORTS: ShortClip[] = [
         "text": "Maybe if I butter both ends and push?"
       },
       {
-        "t": 17.14,
+        "t": 17.1,
         "who": "Mum",
         "text": "Put the butter back in the fridge."
       },
       {
-        "t": 19.47,
+        "t": 19.42,
         "who": "Vanishree",
         "text": "Hold on! Tilt it corner-to-corner through three-dimensional space!"
       },
       {
-        "t": 24.75,
+        "t": 24.7,
         "who": "Sigma",
         "text": "Did somebody summon a three-dimensional shadow triangle?"
       },
       {
-        "t": 28.49,
+        "t": 28.45,
         "who": "Sigma",
         "text": "Step back before that pole hits the fan."
       },
       {
-        "t": 31.77,
+        "t": 31.73,
         "who": "Dad",
         "text": "Does he pay rent, or just appear whenever triangles are threatened?"
       },
       {
-        "t": 36.22,
+        "t": 36.17,
         "who": "Vanishree",
         "text": "Definitely the second one. Grab a notebook!"
       }
@@ -1624,72 +1619,72 @@ export const SHORTS: ShortClip[] = [
     "poster": "/videos/posters/trigonometry-3d.jpg",
     "captions": [
       {
-        "t": 3.27,
+        "t": 3.22,
         "who": "Sigma",
         "text": "Quick warm-up first!"
       },
       {
-        "t": 4.91,
+        "t": 4.86,
         "who": "Sigma",
         "text": "Give me exact sines for zero, thirty, forty-five, sixty, and ninety degrees."
       },
       {
-        "t": 11.74,
+        "t": 11.69,
         "who": "Vanishree",
         "text": "Root zero, root one, root two, root three, root four, all over two!"
       },
       {
-        "t": 16.44,
+        "t": 16.4,
         "who": "Vanishree",
         "text": "And cosine counts backwards!"
       },
       {
-        "t": 19.01,
+        "t": 18.96,
         "who": "Sigma",
         "text": "And where do you measure an angle of depression?"
       },
       {
-        "t": 22.14,
+        "t": 22.1,
         "who": "Vanishree",
         "text": "Always down from the horizontal eyeline, matching alternate elevation from below!"
       },
       {
-        "t": 27.3,
+        "t": 27.25,
         "who": "Sigma",
         "text": "Clean! Now in three dimensions, never squint at a skewed solid."
       },
       {
-        "t": 31.72,
+        "t": 31.67,
         "who": "Sigma",
         "text": "Shine a vertical torch straight down to find the shadow!"
       },
       {
-        "t": 36.25,
+        "t": 36.2,
         "who": "Vanishree",
         "text": "On a twelve-by-nine floor, Pythagoras gives a shadow diagonal of fifteen!"
       },
       {
-        "t": 41.16,
+        "t": 41.12,
         "who": "Sigma",
         "text": "Stand up the vertical triangle on that shadow: base fifteen, height eight, hypotenuse seventeen!"
       },
       {
-        "t": 48.52,
+        "t": 48.48,
         "who": "Sigma",
         "text": "Dad's sixteen-foot pole fits."
       },
       {
-        "t": 51.34,
+        "t": 51.3,
         "who": "Vanishree",
         "text": "And the angle with the floor is inverse tan of eight over fifteen!"
       },
       {
-        "t": 55.06,
+        "t": 55.02,
         "who": "Sigma",
         "text": "Now watch Edexcel's favourite pyramid word-swap: sloping edge versus sloping face."
       },
       {
-        "t": 61.46,
+        "t": 61.41,
         "who": "Vanishree",
         "text": "That caught me last week! Sloping edge uses the corner and half the base diagonal."
       }
@@ -1714,62 +1709,62 @@ export const SHORTS: ShortClip[] = [
     "poster": "/videos/posters/trigonometry-3d.jpg",
     "captions": [
       {
-        "t": 2.22,
+        "t": 2.18,
         "who": "Examiner",
         "text": "Calculators down!"
       },
       {
-        "t": 3.53,
+        "t": 3.48,
         "who": "Examiner",
         "text": "Every June, candidates press inverse sine, write fifty-five point five degrees, and lose two marks!"
       },
       {
-        "t": 11.74,
+        "t": 11.7,
         "who": "Vanishree",
         "text": "Because the question stated the angle is obtuse!"
       },
       {
-        "t": 14.9,
+        "t": 14.86,
         "who": "Examiner",
         "text": "Precisely! Inverse sine on a calculator never goes past ninety degrees."
       },
       {
-        "t": 20.19,
+        "t": 20.14,
         "who": "Examiner",
         "text": "It hides the obtuse twin!"
       },
       {
-        "t": 22.65,
+        "t": 22.61,
         "who": "Sigma",
         "text": "See the compass arc? A shorter opposite side cuts the base twice: once acute, once obtuse."
       },
       {
-        "t": 30.03,
+        "t": 29.98,
         "who": "Vanishree",
         "text": "So if inverse sine gives thirty degrees, the obtuse answer is one hundred and eighty minus thirty: one hundred and fifty degrees!"
       },
       {
-        "t": 37.69,
+        "t": 37.64,
         "who": "Examiner",
         "text": "Next trap: Cosine Rule with an obtuse angle! What is cosine of one hundred and twenty degrees?"
       },
       {
-        "t": 44.99,
+        "t": 44.95,
         "who": "Vanishree",
         "text": "Negative one half! Wait... minus times minus turns minus two b c cos A into a PLUS!"
       },
       {
-        "t": 51.16,
+        "t": 51.12,
         "who": "Examiner",
         "text": "Bravo!"
       },
       {
-        "t": 51.61,
+        "t": 51.57,
         "who": "Examiner",
         "text": "Forty-nine plus sixty-four PLUS fifty-six gives one hundred and sixty-nine, square root thirteen!"
       },
       {
-        "t": 59.52,
+        "t": 59.48,
         "who": "Sigma",
         "text": "Opening compass arms past ninety degrees must stretch the third side longer than Pythagoras!"
       }
@@ -1794,37 +1789,37 @@ export const SHORTS: ShortClip[] = [
     "poster": "/videos/posters/trigonometry-3d.jpg",
     "captions": [
       {
-        "t": 2.34,
+        "t": 2.29,
         "who": "Sigma",
         "text": "Try this! A cuboid is eight by six by twenty-four centimetres. Find its exact space diagonal!"
       },
       {
-        "t": 15.77,
+        "t": 15.72,
         "who": "Sigma",
         "text": "Floor diagonal ten centimetres, and root of ten squared plus twenty-four squared is twenty-six centimetres!"
       },
       {
-        "t": 24.82,
+        "t": 24.78,
         "who": "Examiner",
         "text": "Calculators down!"
       },
       {
-        "t": 26.13,
+        "t": 26.08,
         "who": "Examiner",
         "text": "Every June, candidates press inverse sine, write fifty-five point five degrees, and lose two marks!"
       },
       {
-        "t": 34.34,
+        "t": 34.3,
         "who": "Vanishree",
         "text": "Because the question stated the angle is obtuse!"
       },
       {
-        "t": 37.5,
+        "t": 37.46,
         "who": "Examiner",
         "text": "Precisely! Inverse sine on a calculator never goes past ninety degrees."
       },
       {
-        "t": 42.79,
+        "t": 42.74,
         "who": "Examiner",
         "text": "It hides the obtuse twin!"
       }
@@ -1904,47 +1899,47 @@ export const SHORTS: ShortClip[] = [
         "text": "Right, going from A to B means walking backwards from A to O as negative a, then forwards from O to B as positive b."
       },
       {
-        "t": 18.62,
+        "t": 18.64,
         "who": "Sigma",
         "text": "Spot on, destination minus start! Now look at point P splitting A B in the ratio two to three."
       },
       {
-        "t": 25.97,
+        "t": 25.99,
         "who": "Vanishree",
         "text": "Wait, two to three means five equal parts altogether, not thirds!"
       },
       {
-        "t": 30.29,
+        "t": 30.3,
         "who": "Vanishree",
         "text": "So A P is two fifths of b minus a."
       },
       {
-        "t": 33.15,
+        "t": 33.16,
         "who": "Sigma",
         "text": "Exactly. Add that onto O A and O P simplifies to three fifths a plus two fifths b."
       },
       {
-        "t": 39.68,
+        "t": 39.69,
         "who": "Vanishree",
         "text": "And if point Q has position vector nine fifths a plus six fifths b, then O Q is simply three times O P."
       },
       {
-        "t": 46.14,
+        "t": 46.16,
         "who": "Vanishree",
         "text": "Boom, collinear, full marks!"
       },
       {
-        "t": 49.9,
+        "t": 49.91,
         "who": "Examiner",
         "text": "Hold your pen right there, young lady! I am confiscating your final communication mark!"
       },
       {
-        "t": 56.55,
+        "t": 56.56,
         "who": "Vanishree",
         "text": "What?! I just proved O Q is three times O P!"
       },
       {
-        "t": 60.12,
+        "t": 60.1,
         "who": "Examiner",
         "text": "Showing one vector is a scalar multiple of another only proves those two segments are parallel, like railway tracks!"
       }
@@ -1969,27 +1964,27 @@ export const SHORTS: ShortClip[] = [
     "poster": "/videos/posters/vectors-sets-stats.jpg",
     "captions": [
       {
-        "t": 3.3,
+        "t": 3.31,
         "who": "Examiner",
         "text": "Hold your pen right there, young lady! I am confiscating your final communication mark!"
       },
       {
-        "t": 9.95,
+        "t": 9.96,
         "who": "Vanishree",
         "text": "What?! I just proved O Q is three times O P!"
       },
       {
-        "t": 13.52,
+        "t": 13.5,
         "who": "Examiner",
         "text": "Showing one vector is a scalar multiple of another only proves those two segments are parallel, like railway tracks!"
       },
       {
-        "t": 23.89,
+        "t": 23.88,
         "who": "Examiner",
         "text": "On Edexcel Higher, unless you write that O Q is parallel to O P and they share the common point O, you drop the final mark every single time."
       },
       {
-        "t": 33.31,
+        "t": 33.3,
         "who": "Vanishree",
         "text": "Parallel plus common point!"
       },
@@ -1999,12 +1994,12 @@ export const SHORTS: ShortClip[] = [
         "text": "O Q equals three O P so they are parallel, and they share common vertex O, therefore O, P and Q are collinear."
       },
       {
-        "t": 42.85,
+        "t": 42.91,
         "who": "Sigma",
         "text": "Frame that sentence in gold! Try a quick magnitude warm-up before we grab snacks."
       },
       {
-        "t": 49.21,
+        "t": 49.27,
         "who": "Sigma",
         "text": "Challenge one! Find the exact magnitude of the column vector negative five, twelve."
       }
@@ -2022,39 +2017,39 @@ export const SHORTS: ShortClip[] = [
     "totalInTopic": 4,
     "title": "Vectors, Sets & Stats: 5-Second Challenge Showdown",
     "summary": "Pause and beat Vanishree on an exam-grade Vectors, Sets & Histograms question.",
-    "startSec": 129.4,
-    "endSec": 173.4,
+    "startSec": 129.5,
+    "endSec": 173.5,
     "durationSec": 44,
     "src": "/videos/vectors-sets-stats.mp4",
     "poster": "/videos/posters/vectors-sets-stats.jpg",
     "captions": [
       {
-        "t": 2.31,
+        "t": 2.27,
         "who": "Sigma",
         "text": "Challenge one! Find the exact magnitude of the column vector negative five, twelve."
       },
       {
-        "t": 14.78,
+        "t": 14.74,
         "who": "Sigma",
         "text": "Negative five squared is positive twenty five, plus one hundred and forty four gives one hundred and sixty nine, whose square root is thirteen!"
       },
       {
-        "t": 26.32,
+        "t": 26.28,
         "who": "Uncle Hock",
         "text": "Aha, Vani!"
       },
       {
-        "t": 26.97,
+        "t": 26.95,
         "who": "Uncle Hock",
         "text": "Forty regulars ordered snacks today: twenty one took chilli, nineteen took lime, and six took plain with neither."
       },
       {
-        "t": 34.93,
+        "t": 35.15,
         "who": "Vanishree",
         "text": "Let me draw a Venn diagram from the innermost overlap outward!"
       },
       {
-        "t": 38.8,
+        "t": 39.02,
         "who": "Sigma",
         "text": "Always subtract the outside six from forty first, leaving thirty four inside the union of Chilli and Lime."
       }
