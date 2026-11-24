@@ -44,7 +44,7 @@ function LoadError() {
 }
 
 export function AppGate({ children }: { children: ReactNode }) {
-  const { status, signInOpen, closeSignIn } = useStore();
+  const { status, signInOpen, accountsAvailable, closeSignIn } = useStore();
   const path = usePathname();
   // The parent dashboard works without choosing a learner (it has its own PIN gate).
   const parentRoute = path?.startsWith("/parent");
@@ -68,7 +68,7 @@ export function AppGate({ children }: { children: ReactNode }) {
           <MobileNav />
         </ErrorBoundary>
       ) : null}
-      {signInOpen && status === "ready" ? (
+      {signInOpen && accountsAvailable && status === "ready" ? (
         <div className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-black/40 p-4" role="dialog" aria-modal="true" aria-label="Optional cloud sign-in">
           <div className="relative mt-10 w-full max-w-lg rounded-2xl bg-surface p-2 shadow-xl">
             <button type="button" className="btn btn-ghost absolute right-2 top-2 text-sm" onClick={closeSignIn} aria-label="Close sign-in and keep studying">

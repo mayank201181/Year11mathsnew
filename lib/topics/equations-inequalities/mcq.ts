@@ -210,7 +210,7 @@ export const mcqPapers: Paper[] = [
         kind: "mcq",
         id: "equations-inequalities-m2-q02",
         question: "For what values of {{k}} does {{x^2 + kx + 16 = 0}} have **two distinct real roots**?",
-        options: ["{{k = +-8}}", "{{k > 8}} only", "{{k < -8}} or {{k > 8}}", "{{-8 < k < 8}}"],
+        options: ["{{k <= -8}} or {{k >= 8}}", "{{k > 8}} only", "{{k < -8}} or {{k > 8}}", "{{-8 < k < 8}}"],
         answerIndex: 2,
         explanation:
           "Two distinct real roots require {{b^2 - 4ac > 0 => k^2 - 4(1)(16) > 0 => k^2 - 64 > 0 => (k + 8)(k - 8) > 0}}, giving two outer tails {{k < -8}} or {{k > 8}}. {{k > 8}} only forgets that {{k < -8}} also makes {{k^2 > 64}}.",
@@ -316,7 +316,7 @@ export const mcqPapers: Paper[] = [
         kind: "mcq",
         id: "equations-inequalities-m2-q10",
         question: "Find the set of values of {{x}} for which **both** {{3x - 5 < 10}} **and** {{x^2 - 2x - 8 > 0}}.",
-        options: ["{{4 < x < 5}}", "{{x < -2}} or {{4 < x < 5}}", "{{-2 < x < 4}}", "{{x < 5}}"],
+        options: ["{{4 < x < 5}}", "{{x < -2}} or {{4 < x < 5}}", "{{-2 < x < 4}}", "{{x < -2}} or {{x > 4}}"],
         answerIndex: 1,
         explanation:
           "Linear: {{3x < 15 => x < 5}}. Quadratic: {{(x - 4)(x + 2) > 0 => x < -2}} or {{x > 4}}. Intersecting (`and`) both conditions with {{x < 5}} keeps the entire left tail {{x < -2}} (since every number below {{-2}} is also below {{5}}!) AND narrows {{x > 4}} to {{4 < x < 5}}. Dropping {{x < -2}} is the #1 Grade 9 trap!",

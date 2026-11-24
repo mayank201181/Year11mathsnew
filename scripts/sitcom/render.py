@@ -68,7 +68,7 @@ async def main():
                 await browser.close()
                 return
 
-            fps = tl["fps"]
+            fps = tl.get("fps", 24)
             total_frames = math.ceil(tl["duration"] * fps)
             workers = min(2, max(1, int(opt(args, "--workers", "1"))))
             per = math.ceil(total_frames / workers)
@@ -84,7 +84,9 @@ async def main():
                 proc = await asyncio.create_subprocess_exec(
                     "ffmpeg", "-y", "-loglevel", "error",
                     "-f", "image2pipe", "-framerate", str(fps), "-c:v", "mjpeg", "-i", "-",
-                    "-c:v", "libx264", "-threads", "1", "-preset", "veryfast", "-crf", "27", "-pix_fmt", "yuv420p", "-tune", "animation",
+                    "-vf", "scale=in_range=full:out_range=tv,format=yuv420p",
+                    "-c:v", "libx264", "-threads", "1", "-preset", "veryfast", "-crf", "24",
+                    "-pix_fmt", "yuv420p", "-color_range", "tv", "-tune", "animation",
                     seg,
                     stdin=asyncio.subprocess.PIPE,
                 )

@@ -17,7 +17,7 @@ const PRESETS: { label: string; prompt: string }[] = [
 ];
 
 export function AskAI({ context, compact }: { context: string; compact?: boolean }) {
-  const { mode } = useStore();
+  const { mode, aiAvailable, accountsAvailable } = useStore();
   const [open, setOpen] = useState(false);
   const [turns, setTurns] = useState<Turn[]>([]);
   const [draft, setDraft] = useState("");
@@ -28,6 +28,8 @@ export function AskAI({ context, compact }: { context: string; compact?: boolean
   useEffect(() => {
     endRef.current?.scrollIntoView({ block: "nearest" });
   }, [turns, busy]);
+
+  if (!aiAvailable || (mode === "guest" && !accountsAvailable)) return null;
 
   async function send(text: string) {
     const q = text.trim();

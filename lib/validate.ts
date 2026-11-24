@@ -106,6 +106,17 @@ export function checkQuestion(where: string, q: Question, sectionIds: Set<string
       });
       const norm = q.options.map((o) => o.replace(/\s+/g, "").toLowerCase());
       if (new Set(norm).size !== norm.length) issues.push({ where, problem: "duplicate options" });
+      if (Number.isInteger(q.answerIndex) && q.answerIndex >= 0 && q.answerIndex < q.options.length) {
+        const lens = q.options.map((o) => o.trim().length);
+        const correctLen = lens[q.answerIndex];
+        const longestDistractor = Math.max(...lens.filter((_, i) => i !== q.answerIndex));
+        if (correctLen >= 20 && longestDistractor > 0 && correctLen > 1.6 * longestDistractor) {
+          issues.push({
+            where,
+            problem: `correct option (${correctLen} chars) is conspicuously longer than longest distractor (${longestDistractor} chars, ${(correctLen / longestDistractor).toFixed(2)}× > 1.6×)`,
+          });
+        }
+      }
     }
     if (!Number.isInteger(q.answerIndex) || q.answerIndex < 0 || q.answerIndex > 3) issues.push({ where, problem: "answerIndex out of range" });
     checkText(`${where}.explanation`, q.explanation, issues);
@@ -127,7 +138,12 @@ export function checkQuestion(where: string, q: Question, sectionIds: Set<string
     if (q.commonError) checkText(`${where}.commonError`, q.commonError, issues);
     checkTraps(where, q.answer, q.traps, issues);
   } else if (q.kind === "written") {
-    if (q.marks !== q.markScheme?.length) issues.push({ where, problem: `marks (${q.marks}) must equal markScheme length (${q.markScheme?.length})` });
+    if (!Number.isInteger(q.marks) || q.marks < 1) issues.push({ where, problem: `marks (${q.marks}) must be a positive integer` });
+    if (!Array.isArray(q.markScheme) || q.markScheme.length < q.marks) {
+      issues.push({ where, problem: `markScheme length (${q.markScheme?.length ?? 0}) must be at least marks (${q.marks})` });
+    } else if (q.marks !== q.markScheme.length) {
+      issues.push({ where, problem: `marks (${q.marks}) must equal markScheme length (${q.markScheme.length})` });
+    }
     checkText(`${where}.modelAnswer`, q.modelAnswer, issues);
     if (q.commonError) checkText(`${where}.commonError`, q.commonError, issues);
     q.markScheme?.forEach((p, i) => {

@@ -495,7 +495,7 @@ function Goals() {
 }
 
 function FocusPicker({ ready }: { ready: TopicSummary[] }) {
-  const { data, activeProfile, mode, setFocusTopics } = useStore();
+  const { data, activeProfile, mode, accountsAvailable, setFocusTopics } = useStore();
   const mine = data.focusTopics.filter((id) => ready.some((s) => s.id === id));
   const fromParent = (activeProfile?.settings?.focusTopics ?? []).filter((id) => ready.some((s) => s.id === id));
   const full = mine.length >= MAX_FOCUS;
@@ -555,11 +555,13 @@ function FocusPicker({ ready }: { ready: TopicSummary[] }) {
           })}
         </ul>
       )}
-      <p className="mt-3 text-xs text-ink-2">
-        {mode === "cloud"
-          ? "A parent can also set focus topics from the parent dashboard — the Daily 5 uses both."
-          : "With a family account, a parent can also set focus topics from the parent dashboard."}
-      </p>
+      {mode === "cloud" || accountsAvailable ? (
+        <p className="mt-3 text-xs text-ink-2">
+          {mode === "cloud"
+            ? "A parent can also set focus topics from the parent dashboard — the Daily 5 uses both."
+            : "With a family account, a parent can also set focus topics from the parent dashboard."}
+        </p>
+      ) : null}
     </section>
   );
 }
@@ -661,7 +663,7 @@ function DangerZone() {
               />
             </label>
           ) : null}
-          <button type="submit" className="btn btn-secondary border-bad text-bad" disabled={busy || (cloud && pin.length < 4)}>
+          <button type="submit" className="btn btn-secondary border-bad text-bad" aria-label="Reset progress" disabled={busy || (cloud && pin.length < 4)}>
             {busy ? "Checking…" : "Reset progress…"}
           </button>
           <div aria-live="polite">

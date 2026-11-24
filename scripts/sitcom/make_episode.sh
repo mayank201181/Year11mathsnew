@@ -38,7 +38,7 @@ for T in "$@"; do
   "$PY" render.py "out/$T" --workers 1
   echo "=== $T: encode"
   ffmpeg -nostdin -y -loglevel error -f concat -safe 0 -i "out/$T/parts.txt" -i "out/$T/audio.wav" \
-    -c:v copy \
+    -c:v copy -color_range tv \
     -af "loudnorm=I=-16:TP=-1.5:LRA=11" -ar 48000 -c:a aac -b:a 128k -movflags +faststart -shortest \
     "$MP4"
   "$PY" render.py "out/$T" --poster "$JPG"

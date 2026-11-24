@@ -297,7 +297,7 @@ function chooseTip(data: ProgressDoc, summaries: TopicSummary[], focusIds: strin
 // ---------------------------------------------------------------------------
 
 export function HomeDashboard({ summaries }: { summaries: TopicSummary[] }) {
-  const { data, activeProfile, mode, cloudAvailable, focusTopics, leaveGuest } = useStore();
+  const { data, activeProfile, mode, accountsAvailable, focusTopics, leaveGuest } = useStore();
   const clock = useClock();
   const today = clock?.today ?? todayISO();
 
@@ -381,7 +381,7 @@ export function HomeDashboard({ summaries }: { summaries: TopicSummary[] }) {
 
   const name = activeProfile?.name ?? "Vanishree";
   const avatar = activeProfile?.avatar ?? "🌟";
-  const showGuestNote = mode === "guest" && cloudAvailable && !guestNoteHidden;
+  const showGuestNote = mode === "guest" && accountsAvailable && !guestNoteHidden;
 
   return (
     <div className="space-y-6 sm:space-y-8">

@@ -77,7 +77,7 @@ export function DrillItemCard({
   }
 
   return (
-    <article className="card p-4 sm:p-6">
+    <article className="card min-w-0 p-4 sm:p-6">
       {header}
       <Rich text={item.prompt} className="text-[1.08rem]" />
       {item.diagram ? <Diagram svg={item.diagram} /> : null}
