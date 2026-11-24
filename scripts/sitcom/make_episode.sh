@@ -36,13 +36,14 @@ for T in "$@"; do
   rm -f "out/$T"/part*.mp4
   "$PY" render.py "out/$T" --workers 1
   echo "=== $T: encode"
-  # 2-pass EBU R128 loudnorm + -2.27 dBFS brickwall alimiter before AAC encoding so final MP4 stays strictly <= -1.5 dBTP and ~-16 LUFS
-  LN_AF="$("$PY" -c '
+  # 2-pass EBU R128 loudnorm + -2.6 dBFS lookahead alimiter before AAC encoding so final MP4 stays strictly <= -1.5 dBTP and ~-16 LUFS
+  LN_AF="$("$PY" - "out/$T/audio.wav" <<'PYEOF'
 import json, re, subprocess, sys
 p = subprocess.run(["ffmpeg", "-nostdin", "-hide_banner", "-i", sys.argv[1], "-af", "loudnorm=I=-16:TP=-2.2:LRA=11:print_format=json", "-f", "null", "-"], capture_output=True, text=True).stderr
-j = json.loads(re.search(r"\{[^{}]*\"input_i\"[^{}]*\}", p, re.S).group(0))
-print(f"loudnorm=I=-16:TP=-2.2:LRA=11:measured_I={j[\"input_i\"]}:measured_LRA={j[\"input_lra\"]}:measured_TP={j[\"input_tp\"]}:measured_thresh={j[\"input_thresh\"]}:offset={j[\"target_offset\"]}:linear=true,aresample=48000,alimiter=limit=0.74:level=false:attack=5:release=50")
-' "out/$T/audio.wav")"
+j = json.loads(re.search(r'\{[^{}]*"input_i"[^{}]*\}', p, re.S).group(0))
+print(f"loudnorm=I=-16:TP=-2.2:LRA=11:measured_I={j['input_i']}:measured_LRA={j['input_lra']}:measured_TP={j['input_tp']}:measured_thresh={j['input_thresh']}:offset={j['target_offset']}:linear=true,aresample=48000,alimiter=limit=0.74:level=false:attack=5:release=50")
+PYEOF
+)"
   ffmpeg -nostdin -y -loglevel error -f concat -safe 0 -i "out/$T/parts.txt" -i "out/$T/audio.wav" \
     -c:v copy -color_range tv \
     -af "$LN_AF" -ar 48000 -c:a aac -b:a 128k -movflags +faststart -shortest \
