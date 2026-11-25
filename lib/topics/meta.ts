@@ -20,6 +20,10 @@ export interface TopicMeta {
   title: string;
   strand: Strand;
   icon: string;
+  /** Which IGCSE year normally teaches this topic (Year 10 vs Year 11). */
+  courseYear: 10 | 11;
+  /** Teaching order used when ?year=10 is active (1..N). */
+  courseOrder: number;
   /** Pearson Edexcel 4MA1 Higher specification codes & Tanglin Higher units. */
   curriculum: string;
   sections: SectionPlan[];
@@ -40,6 +44,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Number, Bounds, Indices & Surds",
     strand: "Number",
     icon: "🔢",
+    courseYear: 10,
+    courseOrder: 2,
     curriculum: "Edexcel 4MA1 Higher 1.4, 1.8, 1.9, 1.11; Tanglin Higher Units 2–4",
     sections: [
       {
@@ -75,6 +81,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Quadratics, Algebraic Fractions & Proof",
     strand: "Algebra",
     icon: "🧬",
+    courseYear: 10,
+    courseOrder: 1,
     curriculum: "Edexcel 4MA1 Higher 2.1, 2.2, 2.3; Tanglin Higher Units 1–2",
     sections: [
       {
@@ -109,6 +117,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Equations, Simultaneous & Quadratic Inequalities",
     strand: "Algebra",
     icon: "⚖️",
+    courseYear: 10,
+    courseOrder: 4,
     curriculum: "Edexcel 4MA1 Higher 2.4, 2.6, 2.7, 2.8; Tanglin Higher Unit 5",
     sections: [
       {
@@ -144,6 +154,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Arithmetic Series, Functions & Curve Transformations",
     strand: "Functions & Calculus",
     icon: "📈",
+    courseYear: 11,
+    courseOrder: 6,
     curriculum: "Edexcel 4MA1 Higher 3.1, 3.2, 3.3; Tanglin Higher Units 7 & 11",
     sections: [
       {
@@ -178,6 +190,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Differentiation & Kinematics",
     strand: "Functions & Calculus",
     icon: "🚀",
+    courseYear: 11,
+    courseOrder: 8,
     curriculum: "Edexcel 4MA1 Higher 3.4; Tanglin Higher Calculus & Kinematics",
     sections: [
       {
@@ -208,6 +222,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "3D Mensuration, Similarity & Circle Theorems",
     strand: "Geometry & Trigonometry",
     icon: "🔵",
+    courseYear: 10,
+    courseOrder: 3,
     curriculum: "Edexcel 4MA1 Higher 4.6, 4.9, 4.10; Tanglin Higher Unit 4 & Circle Theorems",
     sections: [
       {
@@ -242,6 +258,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Sine & Cosine Rules, 3D Trig & Trig Graphs",
     strand: "Geometry & Trigonometry",
     icon: "📐",
+    courseYear: 11,
+    courseOrder: 7,
     curriculum: "Edexcel 4MA1 Higher 4.8; Tanglin Higher Unit 8",
     sections: [
       {
@@ -277,6 +295,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Vectors, Sets, Conditional Probability & Histograms",
     strand: "Vectors & Statistics",
     icon: "📊",
+    courseYear: 11,
+    courseOrder: 5,
     curriculum: "Edexcel 4MA1 Higher 1.5, 5.1, 6.1–6.3; Tanglin Higher Unit 6, Vectors & Sets",
     sections: [
       {
